@@ -1,0 +1,30 @@
+.taille{
+    min-height: 350px;
+    width: 300px;
+    margin-bottom: 40px;
+    border-style:solid;
+    border-color: rgb(177, 136, 3);
+    border-width: 1px;
+    color: white;
+}
+.image{
+    justify-content: center;
+    max-width: 50%;
+    height: auto;
+}
+/* .pref{
+    color: white;
+} */
+.panel-default{
+    width: 1200px;
+    border-width: 0px;
+}
+.panel-heading{
+    border-width: 0px;
+}
+#idContainer{
+    background-color: black;
+}
+.content{
+    width: 1800;
+}

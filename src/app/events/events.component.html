@@ -1,0 +1,40 @@
+<p>events works!</p>
+<div id="idContainer" class="container bg-dark">
+    
+    <div class="panel panel-default bg-dark">
+        
+        <div class="panel-heading bg-dark">
+            <p></p><br/>
+        </div>
+
+        <div class="panel-body">
+             <div class="row">
+                    <div *ngFor="let event of listeEvents" class="col-sm-4">         
+                        <div class="card-container taille pref">   
+                                        
+                            <div class="view overlay">
+                                <img class="card-img-top image" src={{event.img2}} alt="Card image">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i
+                                class="fas fa-chevron-right pl-1"></i></a>
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h6 class="card-title">{{event.title1}}</h6>
+                                <hr>
+                                <!-- Text -->
+                                <p class="card-title2">{{event.title2}}</p>
+                                <p> date de début : {{event.dateDebut}} </p>
+                                <p> date de fin : {{event.dateFin}} </p>
+                                <a href="{{event.siteWeb}}">détails</a>
+                            </div>    
+                        </div>         
+                    </div>
+            </div> 
+        </div>
+    </div>
+
+</div>        
+

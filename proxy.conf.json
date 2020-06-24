@@ -1,0 +1,6 @@
+{
+    "/user" : { "secure" : "false",
+                        "target" : "http://localhost:8888"},
+    "/event-api" : { "secure" : "false",
+                            "target" : "http://localhost:8887"}
+}

@@ -1,0 +1,48 @@
+
+ <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+                   
+         <a class="navbar-brand" href="/"> <h1>ChemEventz</h1></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigationBar" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="nav-bar-toggle-icon"></span>
+        </button>
+        <div id="navigationBar" class="navbar-collapse collapse show"> 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a routerLink="/events" class="navlink"><h4> Accueil </h4><span class="sr-only">(current)</span></a>
+                </li>
+                <span> &nbsp; &nbsp; &nbsp;</span>
+                <li class="nav-item">
+                    <a class="navlink"> <h4>By Chemist</h4></a>
+                </li >
+                <span> &nbsp; &nbsp; &nbsp;</span>
+                  <li *ngIf="authority === 'user'" class="nav-item">
+                    <a class="navlink" routerLink="user"><h4>User Board</h4></a>
+                  </li>
+                  <span> &nbsp; &nbsp; &nbsp;</span>
+                  <li *ngIf="authority === 'admin'" class="nav-item">
+                    <a class="navlink" routerLink="admin"><h4>Admin Board</h4></a>
+                  </li>
+                  <span> &nbsp; &nbsp; &nbsp;</span>
+                  <li *ngIf="!authority" class="nav-item">
+                    <a class="navlink" routerLink="auth/login">Login</a>
+                  </li>
+            </ul>
+        </div>
+
+        
+        <div *ngIf="isLoggedIn; else loggedOut">
+             <div class="form-inline mt-2 mt-md-0">
+            
+                <label id="connectedUser">{{username}}  &nbsp; &nbsp;</label>
+                <button routerLink="/logout"  class="btn btn-outline-warning"> Se Déconnecter</button>
+              </div>
+        </div>      
+        <ng-template #loggedOut>
+            <div class="form-inline mt-2 mt-md-0">
+              <button routerLink="/login" class="btn btn-outline-warning"> Se Connecter</button> 
+            </div>
+        </ng-template>    
+    </div>
+</nav>
+
