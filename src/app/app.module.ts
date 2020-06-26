@@ -18,6 +18,7 @@ import { EventService } from './common/services/event.service';
 
 import { httpInterceptorProviders } from './common/services/authentication-interceptor.service';
 import { RegistrationComponent } from './registration/registration.component';
+import { ResearchComponent } from './research/research.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegistrationComponent } from './registration/registration.component';
     ContentComponent,
     LoginComponent,
     EventsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ResearchComponent
   ],
   imports: [
     BrowserModule,

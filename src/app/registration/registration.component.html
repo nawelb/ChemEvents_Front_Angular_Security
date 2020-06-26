@@ -1,1 +1,44 @@
-<p>Créer un espace personnel</p>
+<div *ngIf="isSignedUp; else signupForm">
+    Your registration is successful. Please login!
+</div>
+<ng-template #signupForm>
+    <div id="containerRegistration" class="container">
+        <div class="jumbotron border-warning">
+            <form #formRegister="ngForm">   
+                <h2 id="titleRegistration"> Formulaire d'enregistrement</h2>
+                
+                <hr>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <input id ="inputNom" type ="text" 
+                        pattern="[A-Za-z]" 
+                        class="form-control col-sm-10 inputfield" 
+                        placeholder="Nom" name="name"  [(ngModel)]="form.name" required />
+                        <input id ="inputUsername" type ="text" 
+                            pattern="[A-Za-z]" 
+                            class="form-control col-sm-10 inputfield" 
+                            placeholder="Username" name="username" [(ngModel)]="form.username" #username="ngModel" required /> 
+     
+                                             
+                        <input type="text" 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                            class="form-control col-sm-10" 
+                            placeholder="email" name="email" [(ngModel)]="form.email" #email="ngModel" required />
+                        <input type="password" 
+                            pattern="[A-Za-z]" 
+                            class="form-control col-sm-10 inputfield" 
+                            placeholder="mot de passe" name="password" [(ngModel)]="form.password" #password="ngModel" required /> 
+                        <input id="validateRegistration" type="button" 
+                            pattern="[0-9a-zA-Z]{4,8}" 
+                            class="btn btn-primary" value="S'inscrire" (click)="onSignUp()" routerLink="/events"/>
+                        <div *ngIf="formRegister.submitted && isSignUpFailed" class="alert alert-warning">
+                                Signup failed!<br/>{{errorMessage}}</div>
+    
+                    </div>
+                </div>
+    
+            </form>
+           
+        </div>
+    </div>
+</ng-template>

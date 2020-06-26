@@ -27,7 +27,7 @@
         <div class="col-sm-8 offset-sm-4">
          <input type="button" 
              class="btn btn-primary" 
-             value="login" (click)="onLogin()" />
+             value="login" (click)="onLogin()" routerLink="/events" />
              <div *ngIf="formLogin.submitted && isLoginFailed" class="alert alert-danger">
               Login failed: {{errorMessage}}
             </div>
@@ -35,9 +35,9 @@
       </div> 
     </form>
     <p></p><br/><br/>
-    <div id="signUp" class="form-group row"></div>
-      <h6>Vous n'avez pas encore d'espace personnel? &nbsp;  <i><a href="signup">S'enregistrer</a> </i></h6>         
-      
+    <div id="signUp" class="form-group row">
+      <h6>Vous n'avez pas encore d'espace personnel? &nbsp;  <i><a routerLink="/registration">S'enregistrer</a> </i></h6>         
+    </div>  
   </div>  
 </div>
 

@@ -8,4 +8,12 @@
     border-color: yellow;
     size: 18px;
 }
-
+input[type=text] {
+    border-radius: 12px; ;
+}
+input[type=password] {
+    border-radius: 12px; ;
+}
+input[type=button] {
+    border-radius: 7px; ;
+}
