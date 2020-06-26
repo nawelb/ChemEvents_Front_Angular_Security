@@ -35,5 +35,10 @@ export class HeaderComponent implements OnInit {
       });
     }
   }
+  onLogout(){
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
+  
   }
 
