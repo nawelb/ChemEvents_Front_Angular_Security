@@ -2,7 +2,7 @@
  <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
                    
-         <a class="navbar-brand" href="/"> <h1>ChemEventz</h1></a>
+        <a class="navbar-brand" href="/"> <h1>ChemEventz</h1></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigationBar" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
             <span class="nav-bar-toggle-icon"></span>
         </button>
@@ -23,10 +23,6 @@
                   <li *ngIf="authority === 'admin'" class="nav-item">
                     <a class="navlink" routerLink="admin"><h4>Admin Board</h4></a>
                   </li>
-                  <span> &nbsp; &nbsp; &nbsp;</span>
-                  <li *ngIf="!authority" class="nav-item">
-                    <a class="navlink" routerLink="auth/login">Login</a>
-                  </li>
             </ul>
         </div>
 
@@ -45,4 +41,3 @@
         </ng-template>    
     </div>
 </nav>
-

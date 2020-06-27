@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../common/services/token-storage.service';
+import { ResearchLinkService } from '../common/services/research-link.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   public authority: string;
   isLoggedIn = false;
   
-  constructor(private tokenStorage: TokenStorageService) { }
+  constructor(private tokenStorage: TokenStorageService, researchLinkService : ResearchLinkService) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {

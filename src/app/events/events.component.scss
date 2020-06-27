@@ -4,6 +4,7 @@
     margin-bottom: 40px;
     border-style:solid;
     border-color: rgb(177, 136, 3);
+    border-radius: 10px;
     border-width: 1px;
     color: white;
 }
@@ -12,9 +13,9 @@
     max-width: 50%;
     height: auto;
 }
-/* .pref{
-    color: white;
-} */
+ .pref{
+    //box-shadow: 0 4px 8px 0 rgba(243, 198, 48, 0.568), 0 6px 20px 0 rgba(233, 201, 18, 0.883)
+} 
 .panel-default{
     width: 1200px;
     border-width: 0px;

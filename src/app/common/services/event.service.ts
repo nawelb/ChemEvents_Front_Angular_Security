@@ -17,8 +17,10 @@ export class EventService {
 
   findAll() : Observable<Event[]>{
       return this._http.get<Event[]>("http://localhost:8887/event-api/public/events"); 
-
    } 
-  
+
+   findByCity(city:string) : Observable<Event[]>{
+    return this._http.get<Event[]>("http://localhost:8887/event-api/public/event?city="+city); 
+ }
 }
 
