@@ -10,7 +10,8 @@ import { ResearchLinkService } from '../common/services/research-link.service';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  
+  city:string;
+  country:string;
   listeEvents : Event[];
   research: ResearchComponent;
   constructor(private _eventService : EventService, public researchLinkService:ResearchLinkService) { 
@@ -30,7 +31,21 @@ export class EventsComponent implements OnInit {
       ); 
   } 
 
-
-  
+  getByCity(city:string){
+    this._eventService.findByCity(this.city).subscribe(
+      data => {
+        this.listeEvents = data; 
+      console.log(data)},
+        (error) => { console.log(error)}
+    )
+  }
+  getByCountry(country:string){
+    this._eventService.findByCountry(this.country).subscribe(
+      data => {
+        this.listeEvents = data; 
+      console.log(data)},
+        (error) => { console.log(error)}
+    )
+  }
   
 }

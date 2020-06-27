@@ -1,4 +1,44 @@
 <p>events works!</p>
+<div class="boxSearch">
+
+<div class="nav-bar">
+
+    <div class="container search">
+
+        <h2>Rechercher un événement :</h2>
+        <hr>
+        
+           
+        <div class="row">
+            <div class="col-sm-5">
+                <label for="findByPays"> Par pays :</label>
+            </div>
+            <div class="col-sm-5">
+                <input id="findByPays"  type="text"/> 
+            </div>  
+            <div class="col-sm-5">
+                <label for="findByVille" > Par ville :</label>
+            </div>  
+            <div class="col-sm-5">
+                <input id="findByVille" type="text" name="city" [(ngModel)]="city"/> 
+            </div>
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-5">
+                <input type="button" id="btnResearch" (click)=getByCity(city) results class="btn-warning" value="Rechercher">
+            </div>            
+        </div>                
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 <div id="idContainer" class="container bg-dark">
     
     <div class="panel panel-default bg-dark">
@@ -38,3 +78,4 @@
 
 </div>        
 
+</div>

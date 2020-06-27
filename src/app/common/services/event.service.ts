@@ -11,16 +11,20 @@ export class EventService {
 
   baseUrl: string ="http://localhost:8887/"
   urlFindAll: string ="event-api/public/events"
+  urlFindResearch: string ="event-api/public/event"
 
   constructor(private _http: HttpClient) { }
 
 
   findAll() : Observable<Event[]>{
-      return this._http.get<Event[]>("http://localhost:8887/event-api/public/events"); 
+      return this._http.get<Event[]>(this.baseUrl+this.urlFindAll); 
    } 
 
    findByCity(city:string) : Observable<Event[]>{
-    return this._http.get<Event[]>("http://localhost:8887/event-api/public/event?city="+city); 
+    return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?city="+city); 
  }
+  findByCountry(country:string) : Observable<Event[]>{
+    return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?country="+country); 
+  }
 }
 

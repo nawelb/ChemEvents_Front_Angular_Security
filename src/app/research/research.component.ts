@@ -21,7 +21,7 @@ export class ResearchComponent implements OnInit {
   }
 
   
-  getByCity(){
+  getByCity(city:string){
     this._eventService.findByCity(this.city).subscribe(
       data => {
         this.listeEvents = data; 
