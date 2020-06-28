@@ -8,6 +8,8 @@ export class Event{
                 public lieu : string="?",
                 public email : string="?",
                 public sitWeb : string="?",
-                public tags : string="?"
+                public tags : string="?",
+                public submitAbstract:string="?",
+                public register : string="?",
     ){}
 }

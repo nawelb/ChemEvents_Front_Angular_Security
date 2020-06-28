@@ -3,14 +3,6 @@
     color:white;
 }
 
-.navlink{
-    margin-right: 10 px;
-}
-
-#connectedUser{
-    color: white;
-}
-
 .boxSearch {
     display:flex;
 }
@@ -27,11 +19,45 @@
     border:solid;
     border-color: black;
     border-width: 1px;
-    padding : 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left : 10px;
 }
 
-input{
-    margin-bottom: 10px;
+#rechercherEvent{
+    margin-bottom:10px;
+}
+#zoneSearch{
+    margin-right: 10px;
+}
+
+#btnResearch{
+    width:75px;
+}
+
+
+ #idContainer{
+    margin-top: 27px;
+} 
+
+.panel-default{
+    width: 1140px;
+    border-width: 0px;
+    margin-left: 50px;
+}
+
+.panel-heading{
+    border-width: 0px;
+     max-width: 1060px ;
+ }
+
+img {
+    width: 1060px;
+    height: auto;
+  }
+
+.panel-body{
+    border-width: 0px;
 }
 
 .taille{
@@ -40,41 +66,45 @@ input{
     margin-bottom: 40px;
     border-style:solid;
     border-color: rgb(177, 136, 3);
-    border-radius: 10px;
     border-width: 1px;
     color: white;
 }
 
-.image{
-    justify-content: center;
-    max-width: 50%;
-    height: auto;
+ hr.hrCard{
+    padding-top: 12px;
+    border-style:solid;
+    border-color: orange;
+ }
+
+ h2.card-title1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family:"URW Chancery L";
+ }
+ h3.card-title2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:"URW Chancery L";
+ }
+ 
+ #dateEvent{
+    text-align: center;
+    font-size: 12px;
+    font-style : italic;
+ }
+
+
+ .btnCard{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 1px;
+    font-size: 12px;
+    background-color: rgb(246, 190, 7);
+    
 }
 
- .pref{
-    //box-shadow: 0 4px 8px 0 rgba(243, 198, 48, 0.568), 0 6px 20px 0 rgba(233, 201, 18, 0.883)
-} 
-
-.panel-default{
-    width: 1200px;
-    border-width: 0px;
-    margin-left: 50px;
-}
-
-.panel-heading{
-    border-width: 0px;
-}
-
-#idContainer{
-    background-color: black;
-    margin-top: 37px;
-}
-
-.content{
-    width: 1800;
-}
-
-img {
-    width: 1100px;
-    height: auto;
-  }
+    .rowFooter{
+     align-content: center;
+ }
+ 

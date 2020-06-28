@@ -26,5 +26,8 @@ export class EventService {
   findByCountry(country:string) : Observable<Event[]>{
     return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?country="+country); 
   }
+  findByKeyWord(keyWord:string) : Observable<Event[]>{
+    return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?research="+keyWord); 
+  }
 }
 

@@ -1,81 +1,61 @@
 <p>events works!</p>
 <div class="boxSearch">
 
-<div class="nav-bar">
-
-    <div class="container search">
-
-        <h2>Rechercher un événement :</h2>
-        <hr>
-        
-           
-        <div class="row">
-            <div class="col-sm-5">
-                <label for="findByPays"> Par pays :</label>
-            </div>
-            <div class="col-sm-5">
-                <input id="findByPays"  type="text"/> 
-            </div>  
-            <div class="col-sm-5">
-                <label for="findByVille" > Par ville :</label>
-            </div>  
-            <div class="col-sm-5">
-                <input id="findByVille" type="text" name="city" [(ngModel)]="city"/> 
-            </div>
-            <div class="col-sm-5">
-            </div>
-            <div class="col-sm-5">
-                <input type="button" id="btnResearch" (click)=getByCity(city) results class="btn-warning" value="Rechercher">
-            </div>            
-        </div>                
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-<div id="idContainer" class="container bg-dark">
-    
-    <div class="panel panel-default bg-dark">
-        
-        <div class="panel-heading bg-dark">
-           <img src="https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg">
-        </div>
-
-        <div class="panel-body">
-             <div class="row">
-                    <div *ngFor="let event of listeEvents" class="col-sm-4">         
-                        <div class="card-container taille pref">   
-                                        
-                            <div class="view overlay">
-                                <img class="card-img-top image" src={{event.img2}} alt="Card image">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i
-                                class="fas fa-chevron-right pl-1"></i></a>
-                            <div class="card-body">
-                                <!-- Title -->
-                                <h6 class="card-title">{{event.title1}}</h6>
-                                <hr>
-                                <!-- Text -->
-                                <p class="card-title2">{{event.title2}}</p>
-                                <p> date de début : {{event.dateDebut}} </p>
-                                <p> date de fin : {{event.dateFin}} </p>
-                                <a href="{{event.siteWeb}}">détails</a>
-                            </div>    
-                        </div>         
+    <div class="nav-bar">
+        <div class="container search">
+            <h2>Rechercher un événement :</h2>
+            <hr>
+            <br/>
+                <div id= "rechercherEvent" class="row">
+                    <div id ="zoneSearch" class="col-sm-8">
+                        <input id="findByKeyWord" type="text" name="keyWord" [(ngModel)]="keyWord" placeholder="mot clé, ville, pays" size="40"/> 
                     </div>
-            </div> 
+                    <div id ="btnSearch" class="col-sm-3">
+                        <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning" value="Rechercher">
+                    </div>            
+                </div>                
         </div>
     </div>
 
-</div>        
+
+
+    <div id="idContainer" class="container bg-dark">
+        
+        <div class="panel panel-default bg-dark">
+            
+            <div class="panel-heading bg-dark">
+                <img src="https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg">
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                        <div *ngFor="let event of listeEvents" class="col-sm-4">         
+
+                            <div class="card card-container taille">
+                                
+                                <div class="card-body bg-dark">
+                                    <h2 id="idTitle1" class="card-title1">{{event.title1}}</h2>
+                                    <hr class="hrCard">
+                                    <h3 id="idTitle2" class="card-title2">{{event.title2}}</h3>
+                                    
+                                    <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}} </p>
+                                </div> 
+                                
+                                
+
+                                <div class="rowFooter d-flex align-items-end bg-dark">
+                                    <a href="{{event.register}}" type="button" class="btn btnCard" value="Inscription">Inscription</a>
+                                    <a href="{{event.submitAbstract}}" type="button" class="btn btnCard" value="Abstract">Abstract</a>
+                                    <a href="{{event.siteWeb}}" type="button" class="btn btnCard" value="Site officiel">Site officiel</a>
+                                </div>
+
+                            </div>                                    
+                        </div>            
+                </div>
+            </div> 
+            
+        </div>
+
+    </div>        
 
 </div>

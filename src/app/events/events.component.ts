@@ -10,6 +10,7 @@ import { ResearchLinkService } from '../common/services/research-link.service';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
+  keyWord:string;
   city:string;
   country:string;
   listeEvents : Event[];
@@ -41,6 +42,14 @@ export class EventsComponent implements OnInit {
   }
   getByCountry(country:string){
     this._eventService.findByCountry(this.country).subscribe(
+      data => {
+        this.listeEvents = data; 
+      console.log(data)},
+        (error) => { console.log(error)}
+    )
+  }
+  getByKeyWord(keyWord:string){
+    this._eventService.findByKeyWord(this.keyWord).subscribe(
       data => {
         this.listeEvents = data; 
       console.log(data)},
