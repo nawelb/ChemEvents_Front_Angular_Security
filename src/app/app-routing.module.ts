@@ -4,6 +4,7 @@ import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './content/login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResearchComponent } from './research/research.component';
+import { PersonalSpaceComponent } from './personal-space/personal-space.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: '', redirectTo:'/events', pathMatch:'full'},
   {path: 'signup', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent}, 
-  {path:'results', component:ResearchComponent}
+  {path:'results', component:ResearchComponent},
+  {path:'personalSpace', component:PersonalSpaceComponent}
 ];
 
 @NgModule({
