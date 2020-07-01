@@ -1,3 +1,47 @@
-.main{
-    margin-top:50px;
+.nav-item{
+    list-style:none;
+}
+#containerAddEvent{
+    margin-top: 40 px;
+    margin-left: 380px;
+}
+h2{
+    margin-bottom: 30px;
+}
+hr {
+    margin-bottom: 20px;
+    border-color:darkgrey;
+}
+.jumbotron{
+    margin-top: 180px;
+    width: 500px;
+    border-style:solid;
+    border-color: yellow;
+    size: 18px;
+}
+.form-control{
+     
+     margin-bottom:7px;
+     height:35px;
+}
+#validateRegistration{
+    margin-top: 5px;
+}
+input[type=text] {
+    border-radius: 12px; ;
+}
+input[type=password] {
+    border-radius: 12px; ;
+}
+input[type=button] {
+    border-radius: 7px; 
+    width: 90px;    
+    height:30px
+}
+#formAddEvent{
+    margin: 0px;
+}
+#adminTableEvents{
+    margin-top: 40 px;
+ 
 }

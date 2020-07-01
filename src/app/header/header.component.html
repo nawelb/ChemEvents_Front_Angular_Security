@@ -21,7 +21,7 @@
                   </li>
                   <span> &nbsp; &nbsp; &nbsp;</span>
                   <li *ngIf="authority === 'admin'" class="nav-item">
-                    <a class="navlink" routerLink="admin"><h4>Admin Board</h4></a>
+                    <a class="navlink" routerLink="/adminSpace"><h4>Admin Board</h4></a>
                   </li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
              <div class="form-inline mt-2 mt-md-0">
             
                 <label id="connectedUser">{{username}}  &nbsp; &nbsp;</label>
-                <button class="btn btn-outline-warning" (click)="onLogout()"> Se Déconnecter</button>
+                <button class="btn btn-outline-warning"  (click)="onLogout()" routerLink=""> Se Déconnecter</button>
               </div>
         </div>      
         <ng-template #loggedOut>

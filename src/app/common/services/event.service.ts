@@ -12,7 +12,7 @@ export class EventService {
   baseUrl: string ="http://localhost:8887/"
   urlFindAll: string ="event-api/public/events"
   urlFindResearch: string ="event-api/public/event"
-
+  urlAddEvent: string ="event-api/private/event"
   constructor(private _http: HttpClient) { }
 
 
@@ -29,5 +29,10 @@ export class EventService {
   findByKeyWord(keyWord:string) : Observable<Event[]>{
     return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?research="+keyWord); 
   }
+  addNewEvent(event) {
+    return this._http.post(this.baseUrl+this.urlAddEvent, event, {responseType:'text' as 'json'})
+  }
+
+
 }
 

@@ -18,9 +18,7 @@
     </div>
 
 
-
     <div id="idContainer" class="container bg-dark">
-        
         <div class="panel panel-default bg-dark">
             
             <div class="panel-heading bg-dark">
@@ -30,32 +28,25 @@
             <div class="panel-body">
                 <div class="row">
                         <div *ngFor="let event of listeEvents" class="col-sm-4">         
-
                             <div class="card card-container taille">
-                                
                                 <div class="card-body bg-dark">
                                     <h2 id="idTitle1" class="card-title1">{{event.title1}}</h2>
                                     <hr class="hrCard">
                                     <h3 id="idTitle2" class="card-title2">{{event.title2}}</h3>
-                                    
                                     <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}} </p>
                                 </div> 
-                                
-                                
-
+                                                              
                                 <div class="rowFooter d-flex align-items-end bg-dark">
                                     <a href="{{event.register}}" type="button" class="btn btnCard" value="Inscription">Inscription</a>
                                     <a href="{{event.submitAbstract}}" type="button" class="btn btnCard" value="Abstract">Abstract</a>
                                     <a href="{{event.siteWeb}}" type="button" class="btn btnCard" value="Site officiel">Site officiel</a>
                                 </div>
-
                             </div>                                    
                         </div>            
                 </div>
             </div> 
             
         </div>
-
     </div>        
 
 </div>

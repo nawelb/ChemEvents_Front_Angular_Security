@@ -1,17 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TokenStorageService } from '../common/services/token-storage.service';
+import { Event } from '../common/data/event';
+import { EventService } from '../common/services/event.service';
+
 
 @Component({
   selector: 'app-personal-space',
   templateUrl: './personal-space.component.html',
   styleUrls: ['./personal-space.component.scss']
 })
-export class PersonalSpaceComponent implements OnInit {
+export class PersonalSpaceComponent {
+  //form: any={};
   private roles: string[];
   public username: string;
   public authority: string;
   isLoggedIn = false;
-  constructor(private tokenStorage: TokenStorageService) { }
+  event:Event=new Event("", "", "", "", "","","");
+  message: any;
+
+  constructor(private tokenStorage: TokenStorageService, private eventService:EventService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -32,7 +39,13 @@ export class PersonalSpaceComponent implements OnInit {
         this.authority = 'user';
         return true;
       });
-    }
+    } 
+  }
+  addNewEvent(){
+    console.log(JSON.stringify(this.event));
+    let resp=this.eventService.addNewEvent(this.event);
+    resp.subscribe((data)=> this.message=data);
   }
 
+  
 }

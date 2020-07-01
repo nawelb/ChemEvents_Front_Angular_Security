@@ -20,6 +20,7 @@ import { httpInterceptorProviders } from './common/services/authentication-inter
 import { RegistrationComponent } from './registration/registration.component';
 import { ResearchComponent } from './research/research.component';
 import { PersonalSpaceComponent } from './personal-space/personal-space.component';
+import { AdminSpaceComponent } from './admin-space/admin-space.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PersonalSpaceComponent } from './personal-space/personal-space.componen
     EventsComponent,
     RegistrationComponent,
     ResearchComponent,
-    PersonalSpaceComponent
+    PersonalSpaceComponent,
+    AdminSpaceComponent
   ],
   imports: [
     BrowserModule,
