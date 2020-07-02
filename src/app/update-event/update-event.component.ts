@@ -24,7 +24,7 @@ export class UpdateEventComponent implements OnInit {
       console.log("SessionStorage = " + sessionStorage.getItem('_id'));
       console.log("_id NgOnInit "+this._id);
       this.getEvent(this._id);
-      console.log("event ngOnInit: "+this.evenement._id)
+    //  console.log("event ngOnInit: "+this.evenement._id)
 
     })
   }
