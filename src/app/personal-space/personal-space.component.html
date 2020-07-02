@@ -12,8 +12,8 @@
                           <input id ="inputTitre1" type ="text" 
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 
-                              placeholder="Titre principal" name="title1" 
-                              (ngModel)="event.title1" required />
+                              placeholder={{event.title1}} name="title1" value="title1"
+                               #title1="ngModel" [(ngModel)]="event.title1" required />
                           <input id ="inputTitre2" type ="text" 
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 

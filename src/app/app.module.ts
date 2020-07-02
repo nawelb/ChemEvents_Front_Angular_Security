@@ -22,6 +22,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ResearchComponent } from './research/research.component';
 import { PersonalSpaceComponent } from './personal-space/personal-space.component';
 import { AdminSpaceComponent } from './admin-space/admin-space.component';
+import { UpdateEventComponent } from './update-event/update-event.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminSpaceComponent } from './admin-space/admin-space.component';
     RegistrationComponent,
     ResearchComponent,
     PersonalSpaceComponent,
-    AdminSpaceComponent
+    AdminSpaceComponent,
+    UpdateEventComponent
   ],
   imports: [
     BrowserModule,

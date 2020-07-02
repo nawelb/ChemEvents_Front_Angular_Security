@@ -23,13 +23,16 @@ export class EventService {
 
    findByCity(city:string) : Observable<Event[]>{
     return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?city="+city); 
- }
+   }
+
   findByCountry(country:string) : Observable<Event[]>{
     return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?country="+country); 
   }
+
   findByKeyWord(keyWord:string) : Observable<Event[]>{
     return this._http.get<Event[]>(this.baseUrl+this.urlFindResearch+"?research="+keyWord); 
   }
+  
   addNewEvent(event) {
     return this._http.post(this.baseUrl+this.urlAddEvent, event, {responseType:'text' as 'json'})
   }
@@ -38,8 +41,9 @@ export class EventService {
     return this._http.put(this.baseUrl+this.urlUpdateEvent, event, {responseType:'text' as 'json'})
   }
 
-  findById() : Observable<Event>{
-    return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/:_id"); 
+  findById(_id:string) : Observable<Event>{
+    return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id);
+    //"/:_id" 
   }
 
 }

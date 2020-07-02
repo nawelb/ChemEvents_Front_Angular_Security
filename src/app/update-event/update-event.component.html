@@ -1,0 +1,61 @@
+<div class="test">
+
+    <p >update-event works!</p>
+</div>
+<div>
+    <form action="">
+        <input id ="inputTitre1" type ="text" 
+            pattern="[A-Za-z]" 
+            class="form-control col-sm-12 inputfield" 
+            placeholder="Titre principal"  [(ngModel)]="form.title1" name="title1" 
+            required />
+      <input id ="inputTitre2" type ="text" 
+          pattern="[A-Za-z]" 
+          class="form-control col-sm-12 inputfield" 
+           name="title2" 
+           [(ngModel)]="form.title2" #title2="ngModel" required /> 
+      <input type="text" 
+          class="form-control col-sm-5"
+           name="dateDebut" 
+          [(ngModel)]="form.dateDebut" #dateDebut="ngModel"  required />
+      <input type="text" id="endDate"
+          class="form-control col-sm-5 pull-right" 
+           name="dateFin" 
+          [(ngModel)]="form.dateFin" #dateFin="ngModel" />
+      <input type="text" 
+          class="form-control col-sm-5"
+           name="city" 
+          [(ngModel)]="form.city" #city="ngModel" required />
+      <input type="text" 
+          class="form-control col-sm-5 pull-right" 
+           name="country"
+          [(ngModel)]="form.country" #country="ngModel" required />              
+      <input type="text" 
+          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+          class="form-control col-sm-12" 
+          [(ngModel)]="form.siteWeb" #siteWeb="ngModel" name="siteWeb"  required />
+      <input type="text" 
+          class="form-control col-sm-12 pull-right" 
+          placeholder="pays" name="country"
+           required />    
+      <input id ="inputTitre2" type ="text" 
+           pattern="[A-Za-z]" 
+           class="form-control col-sm-12 inputfield" 
+            name="img1" 
+            [(ngModel)]="form.img1" #img1="ngModel" required />   
+      <input id ="inputTitre2" type ="text" 
+            pattern="[A-Za-z]" 
+            class="form-control col-sm-12 inputfield" 
+             name="img2" 
+             [(ngModel)]="form.img2" #img1="ngModel" required />              
+      <input type="text" 
+          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+          class="form-control col-sm-12" 
+          placeholder="url du site officiel" name="siteWeb"    required />    
+      <input id="validateNewEvent" type="button" 
+          class="btn btn-warning pull-right" value="Enregistrer" />
+          
+
+    </form>
+    
+</div>

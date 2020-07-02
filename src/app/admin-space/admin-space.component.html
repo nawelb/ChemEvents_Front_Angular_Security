@@ -4,6 +4,7 @@
     <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
+          <th scope="col">id</th>
           <th scope="col">title majeur</th>
           <th scope="col">titre mineur</th>
           <th scope="col">site officiel</th>
@@ -11,12 +12,13 @@
       </thead>
       <tbody>
           <tr *ngFor = "let event of listeEvents">
+              <td id="tdId">{{event._id}}</td>
               <td id="tdTitle1">{{event.title1}}</td>
               <td id="tdTitle2">{{event.title2}}</td>
               <td id="tdSiteWeb">{{event.siteWeb}}</td>
               <td>
-                <button type="button" class="btn btn-success btnUpdateModif" 
-                  (click)="openDivUpdate()"> Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
+                <button type="button" class="btn btn-success btnUpdateModif" (click)= "editEvent(event)" > 
+                  Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
                 </button> 
                 
                 <button type="submit" class="btn btn-danger btnUpdateModif" > Supprimer<i class="fa fa-trash" aria-hidden="true" ></i></button> 
