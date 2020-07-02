@@ -14,9 +14,9 @@ export class EventsComponent implements OnInit {
   city:string;
   country:string;
   listeEvents : Event[];
-  research: ResearchComponent;
-  constructor(private _eventService : EventService, public researchLinkService:ResearchLinkService) { 
-    this.researchLinkService.listeEvents;
+  //research: ResearchComponent;
+  constructor(private _eventService : EventService,/*  public researchLinkService:ResearchLinkService */) { 
+    //this.researchLinkService.listeEvents;
   }
 
   ngOnInit(): void{

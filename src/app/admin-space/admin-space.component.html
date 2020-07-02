@@ -1,7 +1,5 @@
-<p>admin-space works!</p>
 
-Hello Admin
-<div class="container tableau" id="adminTableEvents">
+<div class="container tableau float sm-6" id="adminTableEvents">
   <div class="table-responsive table-striped">
     <table class="table table-hover">
       <thead class="thead-dark">
@@ -12,17 +10,66 @@ Hello Admin
         </tr>
       </thead>
       <tbody>
-            <tr *ngFor = "let event of listeEvents">
-                <td id="tdTitle1">{{event.title1}}</td>
-                <td id="tdTitle2">{{event.title2}}</td>
-                <td id="tdSiteWeb">{{event.siteWeb}}</td>
-                <td>
-                  <button type="submit" class="btn btn-success btnUpdateModif" > Modifier <i class="fa fa-edit" aria-hidden="true" ></i></button> 
-                  <button type="submit" class="btn btn-danger btnUpdateModif" > Supprimer<i class="fa fa-trash" aria-hidden="true" ></i></button> 
-
-                </td>
-              </tr>
+          <tr *ngFor = "let event of listeEvents">
+              <td id="tdTitle1">{{event.title1}}</td>
+              <td id="tdTitle2">{{event.title2}}</td>
+              <td id="tdSiteWeb">{{event.siteWeb}}</td>
+              <td>
+                <button type="button" class="btn btn-success btnUpdateModif" 
+                  (click)="openDivUpdate()"> Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
+                </button> 
+                
+                <button type="submit" class="btn btn-danger btnUpdateModif" > Supprimer<i class="fa fa-trash" aria-hidden="true" ></i></button> 
+              </td>
+          </tr>
       </tbody>
     </table>  
   </div>
 </div>
+
+<div [@myAnimation] = 'state' class ="collapseExample p">
+      <input id ="inputTitre1" type ="text" 
+            pattern="[A-Za-z]" 
+            class="form-control col-sm-12 inputfield" 
+            placeholder="Titre principal" name="title1" 
+            (ngModel)="event.title1" required />
+      <input id ="inputTitre2" type ="text" 
+          pattern="[A-Za-z]" 
+          class="form-control col-sm-12 inputfield" 
+          placeholder="Titre secondaire" name="title2" 
+          (ngModel)="event.title2" #title2="ngModel" required /> 
+      <input type="text" 
+          class="form-control col-sm-5"
+          placeholder="date de début : jj/mm/yyyy" name="dateDebut" 
+          (ngModel)="event.dateDebut" #dateDebut="ngModel" required />
+      <input type="text" id="endDate"
+          class="form-control col-sm-5 pull-right" 
+          placeholder="date de fin : jj/mm/yyyy" name="dateFin" 
+          (ngModel)="event.dateFin" #dateFin="ngModel"/>
+      <input type="text" 
+          class="form-control col-sm-5"
+          placeholder="ville" name="city" 
+          (ngModel)="event.city" #city="ngModel" required />
+      <input type="text" 
+          class="form-control col-sm-5 pull-right" 
+          placeholder="pays" name="country"
+          (ngModel)="event.country" #country="ngModel"  required />              
+      <input type="text" 
+          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+          class="form-control col-sm-12" 
+          placeholder="url du site officiel" name="siteWeb" (ngModel)="event.siteWeb" #siteWeb="ngModel"  required />
+      <input type="text" 
+          class="form-control col-sm-5 pull-right" 
+          placeholder="pays" name="country"
+          (ngModel)="event.country" #country="ngModel"  required />              
+      <input type="text" 
+          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+          class="form-control col-sm-12" 
+          placeholder="url du site officiel" name="siteWeb" (ngModel)="event.siteWeb" #siteWeb="ngModel"  required />    
+      <input id="validateNewEvent" type="button" 
+          class="btn btn-warning pull-right" value="Enregistrer" (click)="updateEvent(event)" routerLink="/events"/>
+          
+</div>
+
+
+

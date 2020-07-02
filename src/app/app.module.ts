@@ -16,6 +16,7 @@ import { EventsComponent } from './events/events.component';
 import { RouterModule } from '@angular/router';
 import { EventService } from './common/services/event.service';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { httpInterceptorProviders } from './common/services/authentication-interceptor.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResearchComponent } from './research/research.component';
@@ -37,6 +38,7 @@ import { AdminSpaceComponent } from './admin-space/admin-space.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     BsUtilModule,
