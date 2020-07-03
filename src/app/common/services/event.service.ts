@@ -13,7 +13,7 @@ export class EventService {
   urlFindAll: string ="event-api/public/events"
   urlFindResearch: string ="event-api/public/event"
   urlAddEvent: string ="event-api/private/event"
-  urlUpdateEvent:string="private/admin/event"
+  urlUpdateEvent:string="event-api/private/admin/event"
   constructor(private _http: HttpClient) { }
 
 
@@ -37,9 +37,18 @@ export class EventService {
     return this._http.post(this.baseUrl+this.urlAddEvent, event, {responseType:'text' as 'json'})
   }
 
-  updateEvent(event) {
+  Update(event)  {
+    console.log("ICI "+ JSON.stringify(event))
     return this._http.put(this.baseUrl+this.urlUpdateEvent, event, {responseType:'text' as 'json'})
   }
+
+
+
+  
+ /*  Update(event: Event): Observable<Event>{ 
+   
+    return this._http.put<Event>(this.baseUrl+this.urlUpdateEvent,event, {responseType:'text' as 'json'})
+  } */
 
   findById(_id:string) : Observable<Event>{
     return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id);

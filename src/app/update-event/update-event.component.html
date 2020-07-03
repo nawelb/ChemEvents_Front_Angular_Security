@@ -4,6 +4,8 @@
 </div>
 <div class="formulaire">
     <form action="">
+
+    
         <div class ="row">
             <div class="col-sm-2">
                 <label for="inputTitre1"> Titre majeur</label>
@@ -11,8 +13,8 @@
             <input id ="inputTitre1" type ="text" 
             pattern="[A-Za-z]" 
             class="form-control col-sm-10 inputfield" 
-            placeholder="Titre principal"  [(ngModel)]="form.title1" name="title1" 
-            required />
+            name="title1" [(ngModel)]="form.title1" 
+            #title1="ngModel" required />
      
             <div class="col-sm-2">
                 <label for="inputTitre2"> Titre mineur</label>
@@ -113,12 +115,11 @@
             
             <div class="offset-sm-11 col-sm-1">
                 <input id="validateNewEvent" type="button" 
-                class="btn btn-warning " value="Enregistrer" />
-
+                class="btn btn-warning " value="Enregistrer" 
+                (click)="update()" routerLink="/events" />
             </div>
-           
-        </div>
 
-    </form>
+        </div>
+    </form>    
     
 </div>
