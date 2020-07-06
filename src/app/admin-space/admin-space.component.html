@@ -18,10 +18,12 @@
               <td id="tdSiteWeb">{{event.siteWeb}}</td>
               <td>
                 <button type="button" class="btn btn-success btnUpdateModif" (click)= "editEvent(event)" > 
-                  Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
+                    Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
                 </button> 
                 
-                <button type="submit" class="btn btn-danger btnUpdateModif" > Supprimer<i class="fa fa-trash" aria-hidden="true" ></i></button> 
+                <button type="submit" class="btn btn-danger btnUpdateModif" (click)= "deleteEvent(event)"> 
+                    Supprimer<i class="fa fa-trash" aria-hidden="true" ></i>
+                </button> 
               </td>
           </tr>
       </tbody>
@@ -29,49 +31,6 @@
   </div>
 </div>
 
-<div [@myAnimation] = 'state' class ="collapseExample p">
-      <input id ="inputTitre1" type ="text" 
-            pattern="[A-Za-z]" 
-            class="form-control col-sm-12 inputfield" 
-            placeholder="Titre principal" name="title1" 
-            (ngModel)="event.title1" required />
-      <input id ="inputTitre2" type ="text" 
-          pattern="[A-Za-z]" 
-          class="form-control col-sm-12 inputfield" 
-          placeholder="Titre secondaire" name="title2" 
-          (ngModel)="event.title2" #title2="ngModel" required /> 
-      <input type="text" 
-          class="form-control col-sm-5"
-          placeholder="date de début : jj/mm/yyyy" name="dateDebut" 
-          (ngModel)="event.dateDebut" #dateDebut="ngModel" required />
-      <input type="text" id="endDate"
-          class="form-control col-sm-5 pull-right" 
-          placeholder="date de fin : jj/mm/yyyy" name="dateFin" 
-          (ngModel)="event.dateFin" #dateFin="ngModel"/>
-      <input type="text" 
-          class="form-control col-sm-5"
-          placeholder="ville" name="city" 
-          (ngModel)="event.city" #city="ngModel" required />
-      <input type="text" 
-          class="form-control col-sm-5 pull-right" 
-          placeholder="pays" name="country"
-          (ngModel)="event.country" #country="ngModel"  required />              
-      <input type="text" 
-          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
-          class="form-control col-sm-12" 
-          placeholder="url du site officiel" name="siteWeb" (ngModel)="event.siteWeb" #siteWeb="ngModel"  required />
-      <input type="text" 
-          class="form-control col-sm-5 pull-right" 
-          placeholder="pays" name="country"
-          (ngModel)="event.country" #country="ngModel"  required />              
-      <input type="text" 
-          pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
-          class="form-control col-sm-12" 
-          placeholder="url du site officiel" name="siteWeb" (ngModel)="event.siteWeb" #siteWeb="ngModel"  required />    
-      <input id="validateNewEvent" type="button" 
-          class="btn btn-warning pull-right" value="Enregistrer" (click)="updateEvent(event)" routerLink="/events"/>
-          
-</div>
 
 
 

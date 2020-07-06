@@ -91,12 +91,13 @@ update(){
   this.form.register, 
   );
   //this.updateEvent(this.newEvent);
-  this._eventService.Update(this.newEvent)
+  this._eventService.updateEvent(this.newEvent)
         .subscribe(data => 
         console.log("updated ***************" + JSON.stringify(this.newEvent)),
         
         error => console.log(error));
   console.log("updated ***************" + this.newEvent.country)
 }
+
 
 }

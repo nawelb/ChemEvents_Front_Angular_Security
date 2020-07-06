@@ -14,6 +14,7 @@ export class EventService {
   urlFindResearch: string ="event-api/public/event"
   urlAddEvent: string ="event-api/private/event"
   urlUpdateEvent:string="event-api/private/admin/event"
+  
   constructor(private _http: HttpClient) { }
 
 
@@ -36,23 +37,17 @@ export class EventService {
   addNewEvent(event) {
     return this._http.post(this.baseUrl+this.urlAddEvent, event, {responseType:'text' as 'json'})
   }
-
-  Update(event)  {
-    console.log("ICI "+ JSON.stringify(event))
+  
+  updateEvent(event)  {
     return this._http.put(this.baseUrl+this.urlUpdateEvent, event, {responseType:'text' as 'json'})
   }
-
-
-
   
- /*  Update(event: Event): Observable<Event>{ 
-   
-    return this._http.put<Event>(this.baseUrl+this.urlUpdateEvent,event, {responseType:'text' as 'json'})
-  } */
+  deleteEvent(_id:string) : Observable<Event> {
+    return this._http.delete<Event>(this.baseUrl+this.urlUpdateEvent+"/"+_id)
+  }
 
   findById(_id:string) : Observable<Event>{
-    return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id);
-    //"/:_id" 
+    return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id); 
   }
 
 }

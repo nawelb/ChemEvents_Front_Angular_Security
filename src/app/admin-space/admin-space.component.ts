@@ -52,31 +52,18 @@ export class AdminSpaceComponent implements OnInit {
 
 openDivUpdate():void{
   this.state =(this.state ==="small" ? 'large' : 'small');
-
-}
-
- updateEvent(eventCatch:Event):void {
-  
-  //this.getById();
-  /*  console.log(event._id);
-   sessionStorage.setItem("titre1", event.title1);
-   sessionStorage.setItem("titre2", event.title2);  
-   
-  }*/
-
- 
-
-}
-getById(): void{
-  //this.eventService.findById();
-   
 }
 
 editEvent(event){
   this.eventId =event._id;
   sessionStorage.setItem("_id", this.eventId);
   this._router.navigate(['/updateEvent', this.eventId]);
-  
 }
+
+deleteEvent(event){
+  this.eventId =event._id;
+  delete(this.eventId);
+}
+
 
 }
