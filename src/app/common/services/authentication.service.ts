@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HTTP_INTERCEPTORS } from '@angular/common/http
 import { Observable } from 'rxjs';
 import { SignIn } from '../data/signIn';
 import { LoginResponse } from '../data/loginResponse';
-import { SignUp } from '../data/SignUp';
+import { SignUp } from '../data/signUp';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

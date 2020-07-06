@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../common/services/authentication.service';
-import { SignUp } from '../common/data/SignUp';
+import { SignUp } from '../common/data/signUp';
 
 @Component({
   selector: 'app-registration',
