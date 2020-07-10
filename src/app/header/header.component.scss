@@ -1,4 +1,5 @@
-#navigationBar{
+ #navigationBar{
+    display :flex;
     margin-left: 40px;
     color:white;
 }
@@ -11,3 +12,13 @@
 #connectedUser{
     size: 16px;
 }
+a:link {
+    color:white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color:grey;
+    background-color: transparent;
+    text-decoration: none;
+} 

@@ -1,4 +1,5 @@
 <p>events works!</p>
+
 <div class="boxSearch">
 
     <div class="nav-bar">
@@ -18,7 +19,7 @@
     </div>
 
 
-    <div id="idContainer" class="container bg-dark">
+    <div id="idContainer" class="container col-md-3 bg-dark">
         <div class="panel panel-default bg-dark">
             
             <div class="panel-heading bg-dark">
@@ -33,13 +34,40 @@
                                     <h2 id="idTitle1" class="card-title1">{{event.title1}}</h2>
                                     <hr class="hrCard">
                                     <h3 id="idTitle2" class="card-title2">{{event.title2}}</h3>
-                                    <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}} </p>
+                                    <div *ngIf="event.city==null else elseLieu">
+                                        <p id="lieu" class="lieu"> Webinar </p>
+                                    </div>
+                                    <ng-template #elseLieu>
+                                        <p id="lieu" class="lieu"> {{event.city}} ({{event.country}}) </p>
+                                    </ng-template>
+                                    &nbsp;
+                                    <div *ngIf="event.dateFin ==null else elseBlock">
+                                        <p id="dateEvent" class="DDate"> {{event.dateDebut}} </p>
+                                    </div>
+                                    <ng-template #elseBlock>
+                                        <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}} </p>
+                                    </ng-template>
                                 </div> 
                                                               
                                 <div class="rowFooter d-flex align-items-end bg-dark">
-                                    <a href="{{event.register}}" type="button" class="btn btnCard" value="Inscription">Inscription</a>
-                                    <a href="{{event.submitAbstract}}" type="button" class="btn btnCard" value="Abstract">Abstract</a>
-                                    <a href="{{event.siteWeb}}" type="button" class="btn btnCard" value="Site officiel">Site officiel</a>
+                                    <div *ngIf="event.register !=null else DisableRegister">
+                                        <a id ="register" href="{{event.register}}" target="_blank" type="button" class="btn btnCard" value="Inscription">Inscription</a>
+                                    </div>
+                                    <ng-template #DisableRegister>
+                                        <a id ="register" href="{{event.register}}" target="_blank" type="button" class="btn btnCard disabled" value="Inscription">Inscription</a>
+                                    </ng-template>
+                                    <div *ngIf="event.submitAbstract !=null else Disable">
+                                        <a href="{{event.submitAbstract}}" target="_blank" type="button" class="btn btnCard" value="Abstract">Abstract</a>
+                                    </div>
+                                    <ng-template #Disable>
+                                        <a href="{{event.submitAbstract}}" target="_blank" type="button" class="btn btnCard disabled" value="Abstract">Abstract</a>
+                                    </ng-template>
+                                    <div *ngIf="event.siteWeb !=null else DisableSite">
+                                        <a href="{{event.siteWeb}}" target="_blank" type="button" class="btn btnCard" value="Site officiel">Site officiel</a>
+                                    </div>
+                                    <ng-template #DisableSite>
+                                        <a href="{{event.siteWeb}}" target="_blank" type="button" class="btn btnCard disabled" value="Site officiel">Site officiel</a>
+                                    </ng-template>
                                 </div>
                             </div>                                    
                         </div>            

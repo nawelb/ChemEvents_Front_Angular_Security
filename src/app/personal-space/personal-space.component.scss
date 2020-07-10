@@ -3,7 +3,21 @@
 }
 #containerAddEvent{
     margin-top: 40 px;
-    margin-left: 380px;
+    /* margin-left: 380px; */
+    margin:0 ;
+    background-size:cover;
+    display :flex;
+     background: linear-gradient(#ffffff, #000000);
+     /* background: linear-gradient(#dbc88f, #000000);
+     background: linear-gradient(#e66465, #3141ec); */
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed ;
+    overflow: auto;
 }
 h2{
     margin-bottom: 30px;
@@ -13,8 +27,9 @@ hr {
     border-color:darkgrey;
 }
 .jumbotron{
-    margin-top: 180px;
+    margin-top: 150px;
     width: 500px;
+    height: 450px;
     border-style:solid;
     border-color: yellow;
     size: 18px;

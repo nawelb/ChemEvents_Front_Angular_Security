@@ -1,19 +1,74 @@
 #containerLogin{
-    margin-top: 40 px;
+    /* margin-top: 40 px;
+    bottom: 0;
+    background: linear-gradient(#ffffff, #000000); */
+    margin:0 ;
+    background-size:cover;
+    display :flex;
+     background: linear-gradient(#ffffff, #000000);
+     /* background: linear-gradient(#dbc88f, #000000);
+     background: linear-gradient(#e66465, #3141ec); */
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed ;
+    overflow: auto;
 }
 .jumbotron{
     margin-top: 180px;
     width: 500px;
+    height: 380px;
     border-style:solid;
     border-color: yellow;
     size: 18px;
+    background: none;
+}
+hr {
+    margin-bottom: 30px;
+    border-color:black;
+
+}
+label{
+    font-size: 14px;
+    color: black;
 }
 input[type=text] {
-    border-radius: 12px; ;
+    border-radius: 12px; 
 }
 input[type=password] {
-    border-radius: 12px; ;
+    border-radius: 12px; 
 }
 input[type=button] {
-    border-radius: 7px; ;
+    border-radius: 9px;
+    font-size: small;
+    width: 80px; 
+}
+h2{
+    color:black;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+h6{
+    color:whitesmoke;
+    font-size: 11px;
+}
+a {
+    color:rgb(233, 202, 30);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color:white;
+    background-color: transparent;
+    text-decoration: none;
+} 
+.form-control{
+    
+    margin:5px;
+    margin-top: 0px;
+    height:25px;
+    margin-left: auto;
 }

@@ -21,6 +21,7 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void{
     this.getAllEvents();
+
   };
 
    getAllEvents(): void{
@@ -56,5 +57,6 @@ export class EventsComponent implements OnInit {
         (error) => { console.log(error)}
     )
   }
+
   
 }

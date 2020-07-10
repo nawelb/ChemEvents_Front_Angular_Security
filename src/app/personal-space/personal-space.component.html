@@ -1,10 +1,9 @@
-<div class="container main">
-    <li *ngIf="authority === 'user'" class="nav-item">
+    <div *ngIf="authority === 'user' || authority === 'admin' " class="container main col-sm-12">
         
-        <div id="containerAddEvent" class="container">
-          <div class="jumbotron border-warning">
+        <div id="containerAddEvent" class="container col-sm-12">
+          <div class="jumbotron col-sm-8 col-xs-8 offset-2 border-warning">
               <form #formAddEvent="ngForm" id="formAddEvent"> 
-                  <h2 id="titleEvent"> Ajouter un événement </h2>
+                  <h2 id="titleEvent" class="text-center"> Ajouter un événement </h2>
                   
                   <hr>
                   <div class="row">
@@ -12,8 +11,8 @@
                           <input id ="inputTitre1" type ="text" 
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 
-                              placeholder={{event.title1}} name="title1" 
-                               #title1="ngModel" [(ngModel)]="event.title1" required />
+                              placeholder="Titre principal" name="title1" 
+                               #title1="ngModel" (ngModel)="event.title1" required />
                           <input id ="inputTitre2" type ="text" 
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 
@@ -21,19 +20,19 @@
                               (ngModel)="event.title2" #title2="ngModel" required /> 
                           <input type="text" 
                               class="form-control col-sm-5"
-                              placeholder="date de début : jj/mm/yyyy" name="dateDebut" 
+                              placeholder="Date de début : jj/mm/yyyy" name="dateDebut" 
                               (ngModel)="event.dateDebut" #dateDebut="ngModel" required />
                           <input type="text" id="endDate"
                               class="form-control col-sm-5 pull-right" 
-                              placeholder="date de fin : jj/mm/yyyy" name="dateFin" 
+                              placeholder="Date de fin : jj/mm/yyyy" name="dateFin" 
                               (ngModel)="event.dateFin" #dateFin="ngModel"/>
                           <input type="text" 
                               class="form-control col-sm-5"
-                              placeholder="ville" name="city" 
+                              placeholder="Ville" name="city" 
                               (ngModel)="event.city" #city="ngModel" required />
                           <input type="text" 
                               class="form-control col-sm-5 pull-right" 
-                              placeholder="pays" name="country"
+                              placeholder="Pays" name="country"
                               (ngModel)="event.country" #country="ngModel"  required />
                       
                          
@@ -53,12 +52,11 @@
       </div>
 
 
-      </li>
-      <span> &nbsp; &nbsp; &nbsp;</span>
+    </div>
+     <!--  <span> &nbsp; &nbsp; &nbsp;</span>
       <li *ngIf="authority === 'admin'" class="nav-item">
       
 
 
 
-      </li>
-</div> 
+      </li> -->

@@ -5,20 +5,13 @@ import {trigger, state, style, transition, animate, keyframes} from '@angular/an
 import { Session } from 'protractor';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../common/services/token-storage.service';
 
 @Component({
   selector: 'app-admin-space',
   templateUrl: './admin-space.component.html',
   styleUrls: ['./admin-space.component.scss'], 
-  animations:[
-
-    trigger('myAnimation', [
-      state('small', style({'height':'0px'})),
-      state('large', style({'height':'700px'})),
-
-      transition('small <=> large',animate('400ms ease-in'))
-    ])
-  ]
+  animations:[]
 })
 export class AdminSpaceComponent implements OnInit {
   @Input() event:Event;
@@ -26,6 +19,10 @@ export class AdminSpaceComponent implements OnInit {
   listeEvents:Event[];
   eventId:string;
   public isCollapsed = false;
+  private roles: string[];
+  public username: string;
+  public authority: string;
+  isLoggedIn = false;
 
   tableHeaders = ["title1", "title2", "img1", "img2", 
     "description", "date", "dateDebut", "dateFin", "lieu",
@@ -33,11 +30,32 @@ export class AdminSpaceComponent implements OnInit {
     "submitAbstract", "register"];
   selectedEventEmployeId: number;
 
-  constructor(private eventService:EventService, private _route: ActivatedRoute, private _router:Router) { }
+  constructor(private tokenStorage: TokenStorageService, private eventService:EventService, private _route: ActivatedRoute, private _router:Router) { }
 
   ngOnInit(): void {
-    this.getAllEvents();
-    this.selectedEventEmployeId = +this._route.snapshot.paramMap.get('_id');
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = false;
+      this.roles = this.tokenStorage.getAuthorities();
+      this.username=this.tokenStorage.getUsername();
+      this.roles.every(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.isLoggedIn = true;
+          this.authority = 'admin';
+          this.getAllEvents();
+          return false;
+        } else if (role === 'ROLE_PM') {
+          this.isLoggedIn = true;
+          this.authority = 'pm';
+          return false;
+        }
+        this.isLoggedIn = true;
+        this.authority = 'user';
+        return true;
+      });
+    } 
+    
+/*     this.selectedEventEmployeId = +this._route.snapshot.paramMap.get('_id');
+ */  
   }
 
 
@@ -60,9 +78,16 @@ editEvent(event){
   this._router.navigate(['/updateEvent', this.eventId]);
 }
 
-deleteEvent(event){
-  this.eventId =event._id;
-  delete(this.eventId);
+deleteEvent(id:string){
+  let res=this.eventService.deleteEvent(id);
+  res.subscribe(
+    data => {
+      this.event=data,
+      this.getAllEvents();
+      console.log(data)
+    }, (error) => {console.log(error)}
+  )
+
 }
 
 

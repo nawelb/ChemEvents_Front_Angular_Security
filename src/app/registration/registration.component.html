@@ -2,14 +2,14 @@
     Your registration is successful. Please login!
 </div>
 <ng-template #signupForm>
-    <div id="containerRegistration" class="container">
-        <div class="jumbotron border-warning">
+     <div id="containerRegistration" class="container col-sm-12">
+        <div class="jumbotron col-sm-8 col-xs-8 offset-2 border-warning">
             <form #formRegister="ngForm">   
-                <h2 id="titleRegistration"> Formulaire d'enregistrement</h2>
+                <h2 id="titleRegistration" class="text-center"> Formulaire d'enregistrement</h2>
                 
                 <hr>
                 <div class="row">
-                    <div class="col-sm-11">
+                    <div class="col-sm-11 offset-1 ">
                         <input id ="inputNom" type ="text" 
                         pattern="[A-Za-z]" 
                         class="form-control col-sm-10 inputfield" 
@@ -30,7 +30,7 @@
                             placeholder="mot de passe" name="password" [(ngModel)]="form.password" #password="ngModel" required /> 
                         <input id="validateRegistration" type="button" 
                             pattern="[0-9a-zA-Z]{4,8}" 
-                            class="btn btn-primary" value="S'inscrire" (click)="onSignUp()" routerLink="/events"/>
+                            class="btn btn-warning  offset-7 col-sm-3 " value="S'inscrire" (click)="onSignUp()" routerLink="/events"/>
                         <div *ngIf="formRegister.submitted && isSignUpFailed" class="alert alert-warning">
                                 Signup failed!<br/>{{errorMessage}}</div>
     
@@ -40,5 +40,5 @@
             </form>
            
         </div>
-    </div>
+    </div> 
 </ng-template>

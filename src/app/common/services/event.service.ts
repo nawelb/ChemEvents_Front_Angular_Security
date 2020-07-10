@@ -50,5 +50,7 @@ export class EventService {
     return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id); 
   }
 
+
+  
 }
 

@@ -4,11 +4,11 @@
 
 <ng-template #loggedOut>
 
-<div id="containerLogin" class="container">
-  <div class="jumbotron border-warning">
+<div id="containerLogin" class="container col-sm-12">
+  <div class="jumbotron col-sm-6 offset-3 border-warning">
     <form name="form" (ngSubmit)="formLogin.form.valid && onLogin()" #formLogin="ngForm" novalidate>
       <h2 id="headerLogin" class="text-center"> Se connecter</h2>
-      <p></p><br/>
+      <hr>
       <div id="formLoginUsername" class="form-group row" >
         <label class="col-sm-4" > username : </label>
         <div class="col-sm-8">
@@ -16,9 +16,9 @@
         </div>
       </div>
       <div class="form-group row">
-          <label class="col-sm-4" > password :</label> 
+          <label class="col-sm-4" for="inputPw"> password :</label> 
           <div class="col-sm-8">
-              <input type="password" class="form-control" [(ngModel)]="form.password" name="password" required /> 
+              <input id="inputPw" type="password" class="form-control" [(ngModel)]="form.password" name="password" required /> 
           </div>
       </div>
   
@@ -26,7 +26,7 @@
       <div class="form-group row">
         <div class="col-sm-8 offset-sm-4">
          <input type="button" 
-             class="btn btn-primary" 
+             class="btn btn-warning form-control" 
              value="login" (click)="onLogin()" routerLink="/events" />
              <div *ngIf="formLogin.submitted && isLoginFailed" class="alert alert-danger">
               Login failed: {{errorMessage}}
@@ -36,7 +36,7 @@
     </form>
     <p></p><br/><br/>
     <div id="signUp" class="form-group row">
-      <h6>Vous n'avez pas encore d'espace personnel? &nbsp;  <i><a routerLink="/registration">S'enregistrer</a> </i></h6>         
+      <h6>Vous n'avez pas encore d'espace personnel? &nbsp;  <i><a class="link" routerLink="/registration">S'enregistrer</a> </i></h6>         
     </div>  
   </div>  
 </div>

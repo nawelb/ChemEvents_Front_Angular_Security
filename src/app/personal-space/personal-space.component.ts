@@ -29,7 +29,7 @@ export class PersonalSpaceComponent {
         if (role === 'ROLE_ADMIN') {
           this.isLoggedIn = true;
           this.authority = 'admin';
-          return false;
+          return true;
         } else if (role === 'ROLE_PM') {
           this.isLoggedIn = true;
           this.authority = 'pm';

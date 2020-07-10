@@ -1,32 +1,50 @@
-.tableau{
-    width:1500px;
-    margin-top:70px;
-    margin-left: 200px;
-    font-family: sans-serif;
-    font-size:14px;
-    float: left;
+.outside{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed ;
+    overflow: auto;
 }
 
-#tdBtn{
-    width: 200px;
+.tableau{
+    /* width:1100px; */
+    margin-top:70px;
+    font-family: sans-serif;
+    font-size: 12px;
+    float: left;
+    text-align: center;
+
+}
+
+.table{
+    padding:8px;
 }
 
 .btn{
     width: 80px;
     height: 25px;
     border-radius: 7px;
+    margin-left:10px;
     color: black;
-} 
-.collapseExample{
-    margin-top: 80px;
-    width:550px;
-    height:800px;
-    overflow: hidden;
-    background-color: orange;
 }
-input{
-    height: 80 px;
-}
+
 .btn{
-    margin-left:300px;
+    margin-left:10px;
+} 
+th{
+    text-align: center;
+}
+.tr{
+    min-width: 400px;               
+    max-width: 500px;
+    padding: 8px;
+    text-align: left;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+#tdId{
+    width: 80px;
 }

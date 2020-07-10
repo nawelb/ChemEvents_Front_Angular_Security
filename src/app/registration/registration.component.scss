@@ -1,34 +1,56 @@
 #containerRegistration{
-    margin-top: 40 px;
+/*     margin-top: 40 px;
+ */    margin:0 ;
+    background-size:cover;
+    display :flex;
+     background: linear-gradient(#ffffff, #000000);
+     /* background: linear-gradient(#dbc88f, #000000);
+     background: linear-gradient(#e66465, #3141ec); */
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed ;
+    overflow: auto;
 }
 h2{
+    color:black;
+    font-size: 24px;
     margin-bottom: 30px;
 }
 hr {
     margin-bottom: 20px;
-    border-color:darkgrey;
+    border-color:black;
 
 }
 .jumbotron{
-    margin-top: 180px;
+    margin-top: 150px;
     width: 500px;
+    height: 450px;
     border-style:solid;
-    border-color: yellow;
+    border-color: rgb(175, 175, 158);
     size: 18px;
-}
+    background:none ;
+ }
 .form-control{
-    margin:5px;
+    margin:7px;
     height:35px;
-}
+    margin-left: auto;
+}    
 #validateRegistration{
     margin-top: 5px;
 }
 input[type=text] {
-    border-radius: 12px; ;
+    border-radius: 12px; 
+    font-size: small;
 }
 input[type=password] {
-    border-radius: 12px; ;
+    border-radius: 12px; 
+    font-size: small;
 }
 input[type=button] {
-    border-radius: 7px; ;
-}
+    border-radius: 7px;
+    font-size: small; 
+} 
