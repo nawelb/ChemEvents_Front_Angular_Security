@@ -2,11 +2,24 @@
 <!--     <div class="container-fluid">
  -->                   
         <a class="navbar-brand" href="/"> <h1>ChemEventz</h1></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationBar" aria-controls="navigationBar" aria-expanded="false" aria-label="Toggle navigation">
-             <i class="fa fa-bars"></i>  
-        <!--<span class="navbar-text"> </span>-->  
+       
+        <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+        <i class="fa fa-bars"></i>
         </button>
-        <div id="navigationBar" class="collapse navbar-collapse"> 
+        <!-- <hr> -->
+        <!-- <div id="collapseBasic" >
+          <div class="well well-lg card card-block card-header">Some content</div>
+        </div> -->
+        
+        
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationBar" aria-controls="navigationBar" aria-expanded="false" aria-label="Toggle navigation">
+             <i class="fa fa-bars"></i>  
+        
+        </button> -->
+         <!--<span class="navbar-text"> </span>--> 
+         <div id="collapseBasic" class="collapse navbar-collapse" [collapse]="isCollapsed"> 
+       <!--  <div id="navigationBar" class="collapse navbar-collapse">  -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a routerLink="/events" class="navlink"><h4> Accueil </h4><span class="sr-only">(current)</span></a>

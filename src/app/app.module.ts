@@ -24,6 +24,9 @@ import { PersonalSpaceComponent } from './personal-space/personal-space.componen
 import { AdminSpaceComponent } from './admin-space/admin-space.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
 
+// RECOMMENDED
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     PersonalSpaceComponent,
     AdminSpaceComponent,
     UpdateEventComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     FormsModule,
     BsUtilModule,
     HttpClientModule,
+    CollapseModule.forRoot(),
     RouterModule
   ],
   providers: [httpInterceptorProviders],

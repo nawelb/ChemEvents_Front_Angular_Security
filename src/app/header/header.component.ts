@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit {
   public username: string;
   public authority: string;
   isLoggedIn = false;
+  isCollapsed = true;
+
   
   constructor(private tokenStorage: TokenStorageService, researchLinkService : ResearchLinkService) { }
 
