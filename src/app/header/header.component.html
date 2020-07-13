@@ -40,21 +40,24 @@
                   <li *ngIf="authority === 'admin'" class="nav-item">
                     <a class="navlink" routerLink="/adminSpace"><h4> Gestion Evenements</h4></a>
                   </li>
+ 
             </ul>
+
+            <div *ngIf="isLoggedIn; else loggedOut">
+              <div class="form-inline mt-2 mt-md-0">
+             
+                 <label id="connectedUser">{{username}}  &nbsp; &nbsp;</label>
+                 <button class="btn btn-outline-warning"  (click)="onLogout()" routerLink="/events"> Se Déconnecter</button>
+               </div>
+         </div>      
+         <ng-template #loggedOut>
+             <div class="form-inline mt-2 mt-md-0">
+               <button routerLink="/login" class="btn btn-outline-warning"> Se Connecter</button> 
+             </div>
+         </ng-template> 
         </div>
 
         
-        <div *ngIf="isLoggedIn; else loggedOut">
-             <div class="form-inline mt-2 mt-md-0">
-            
-                <label id="connectedUser">{{username}}  &nbsp; &nbsp;</label>
-                <button class="btn btn-outline-warning"  (click)="onLogout()" routerLink="/events"> Se Déconnecter</button>
-              </div>
-        </div>      
-        <ng-template #loggedOut>
-            <div class="form-inline mt-2 mt-md-0">
-              <button routerLink="/login" class="btn btn-outline-warning"> Se Connecter</button> 
-            </div>
-        </ng-template>    
+          
   <!--   </div> -->
 </nav>
