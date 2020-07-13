@@ -14,8 +14,9 @@ const httpOptions = {
 })
 export class AuthenticationService {
 
-  private loginUrl = 'http://localhost:8888/api/auth/signin';
-  private signupUrl = 'http://localhost:8888/api/auth/signup';
+  private baseUrl = "https://prod-chem-eventz-spring-securi.herokuapp.com"
+  private loginUrl = this.baseUrl+'/api/auth/signin';
+  private signupUrl = this.baseUrl+'/api/auth/signup';
 
   constructor(private http: HttpClient) { }
 
