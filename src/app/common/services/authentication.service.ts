@@ -13,9 +13,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  private loginUrl = 'http://localhost:8888/api/auth/signin';
-  private signupUrl = 'http://localhost:8888/api/auth/signup';
+  private baseUrl = process.env.SPRING_AUTH;
+  private loginUrl = this.baseUrl+'/api/auth/signin';
+  private signupUrl = this.baseUrl+'/api/auth/signup';
 
   constructor(private http: HttpClient) { }
 

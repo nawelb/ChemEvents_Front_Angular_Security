@@ -9,7 +9,7 @@ import { Event } from '../data/event';
 })
 export class EventService {
 
-  baseUrl: string ="http://localhost:8887/"
+  baseUrl: string =process.env.SPRING_EVENTS;
   urlFindAll: string ="event-api/public/events"
   urlFindResearch: string ="event-api/public/event"
   urlAddEvent: string ="event-api/private/event"
