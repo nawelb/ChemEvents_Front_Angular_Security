@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../common/services/token-storage.service';
 import { ResearchLinkService } from '../common/services/research-link.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
   isCollapsed = true;
 
   
-  constructor(private tokenStorage: TokenStorageService, researchLinkService : ResearchLinkService) { }
+  constructor(private tokenStorage: TokenStorageService, public router:Router, researchLinkService : ResearchLinkService) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -41,6 +42,7 @@ export class HeaderComponent implements OnInit {
   onLogout(){
     this.tokenStorage.signOut();
     window.location.reload();
+    this.router.navigate(['/events'])
   }
   
   }
