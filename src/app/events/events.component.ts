@@ -3,6 +3,7 @@ import { EventService } from '../common/services/event.service';
 import { Event } from '../common/data/event';
 import { ResearchComponent } from '../research/research.component';
 import { ResearchLinkService } from '../common/services/research-link.service';
+import { getLocaleDateTimeFormat } from '@angular/common';
 
 @Component({
   selector: 'app-events',
@@ -21,7 +22,7 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void{
     this.getAllEvents();
-
+    console.log(getLocaleDateTimeFormat)
   };
 
    getAllEvents(): void{
@@ -58,5 +59,8 @@ export class EventsComponent implements OnInit {
     )
   }
 
+  treatBydate(liste:Event[]){
+
+  }
   
 }

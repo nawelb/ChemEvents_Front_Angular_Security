@@ -10,12 +10,12 @@ import { EventService } from '../common/services/event.service';
   styleUrls: ['./personal-space.component.scss']
 })
 export class PersonalSpaceComponent {
-  //form: any={};
+  form: any={};
   private roles: string[];
   public username: string;
   public authority: string;
   isLoggedIn = false;
-  event:Event=new Event("", "", "", "", "","","");
+  event:Event=new Event();
   message: any;
 
   constructor(private tokenStorage: TokenStorageService, private eventService:EventService) { }
@@ -44,7 +44,7 @@ export class PersonalSpaceComponent {
   addNewEvent(){
     console.log(JSON.stringify(this.event));
     let resp=this.eventService.addNewEvent(this.event);
-    resp.subscribe((data)=> this.message=data);
+    resp.subscribe((data)=> {this.event});
   }
 
   

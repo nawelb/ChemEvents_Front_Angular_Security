@@ -8,8 +8,8 @@ import { Event } from '../data/event';
   providedIn: 'root'
 })
 export class EventService {
-
   baseUrl: string ="https://prod-chem-eventz-spring-events.herokuapp.com/";
+  //baseUrl: string ="http://localhost:8887/";
   urlFindAll: string ="event-api/public/events"
   urlFindResearch: string ="event-api/public/event"
   urlAddEvent: string ="event-api/private/event"

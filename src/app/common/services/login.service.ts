@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  
-  private userUrl = 'http://localhost:8888/api/test/user';
-  private adminUrl = 'http://localhost:8888/api/test/admin';
+  private baseUrl = "https://prod-chem-eventz-spring-securi.herokuapp.com"
+  private userUrl = this.baseUrl+'/api/test/user';
+  private adminUrl = this.baseUrl+'/api/test/admin';
 
   constructor(private http: HttpClient) { }
 

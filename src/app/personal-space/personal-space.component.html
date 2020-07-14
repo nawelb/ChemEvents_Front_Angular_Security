@@ -1,10 +1,13 @@
     <div *ngIf="authority === 'user' || authority === 'admin' " class="container main col-sm-12">
         
         <div id="containerAddEvent" class="container col-sm-12">
+                         
+             
           <div class="jumbotron col-sm-8 col-xs-8 offset-2 border-warning">
+           
               <form #formAddEvent="ngForm" id="formAddEvent"> 
                   <h2 id="titleEvent" class="text-center"> Ajouter un événement </h2>
-                  
+
                   <hr>
                   <div class="row">
                       <div class="col-sm-12">
@@ -12,35 +15,35 @@
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 
                               placeholder="Titre principal" name="title1" 
-                               #title1="ngModel" (ngModel)="event.title1" required />
+                               #title1="ngModel"  [(ngModel)]="event.title1" required />
                           <input id ="inputTitre2" type ="text" 
                               pattern="[A-Za-z]" 
                               class="form-control col-sm-12 inputfield" 
                               placeholder="Titre secondaire" name="title2" 
-                              (ngModel)="event.title2" #title2="ngModel" required /> 
+                              [(ngModel)]="event.title2" #title2="ngModel" required /> 
                           <input type="text" 
                               class="form-control col-sm-5"
                               placeholder="Date de début : jj/mm/yyyy" name="dateDebut" 
-                              (ngModel)="event.dateDebut" #dateDebut="ngModel" required />
+                              [(ngModel)]="event.dateDebut" #dateDebut="ngModel" required />
                           <input type="text" id="endDate"
                               class="form-control col-sm-5 pull-right" 
                               placeholder="Date de fin : jj/mm/yyyy" name="dateFin" 
-                              (ngModel)="event.dateFin" #dateFin="ngModel"/>
+                              [(ngModel)]="event.dateFin" #dateFin="ngModel"/>
                           <input type="text" 
                               class="form-control col-sm-5"
                               placeholder="Ville" name="city" 
-                              (ngModel)="event.city" #city="ngModel" required />
+                              [(ngModel)]="event.city" #city="ngModel" required />
                           <input type="text" 
                               class="form-control col-sm-5 pull-right" 
                               placeholder="Pays" name="country"
-                              (ngModel)="event.country" #country="ngModel"  required />
+                              [(ngModel)]="event.country" #country="ngModel"  required />
                       
                          
                             
                           <input type="text" 
                               pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
                               class="form-control col-sm-12" 
-                              placeholder="url du site officiel" name="siteWeb" (ngModel)="event.siteWeb" #siteWeb="ngModel"  required />    
+                              placeholder="url du site officiel" name="siteWeb" [(ngModel)]="event.siteWeb" #siteWeb="ngModel"  required />    
                           <input id="validateNewEvent" type="button" 
                               class="btn btn-warning pull-right" value="Enregistrer" (click)="addNewEvent()" routerLink="/events"/>
                            
