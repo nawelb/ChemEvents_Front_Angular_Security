@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SignIn } from '../data/signIn';
 import { LoginResponse } from '../data/loginResponse';
 import { SignUp } from '../data/signUp';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,8 +14,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  private baseUrl = "https://prod-chem-eventz-spring-securi.herokuapp.com"
+  
+  private baseUrl: string = environment.urlSecurity;
+  //private baseUrl = "https://prod-chem-eventz-spring-securi.herokuapp.com"
   private loginUrl = this.baseUrl+'/api/auth/signin';
   private signupUrl = this.baseUrl+'/api/auth/signup';
 

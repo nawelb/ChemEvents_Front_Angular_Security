@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Event } from '../data/event';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
-  baseUrl: string ="https://prod-chem-eventz-spring-events.herokuapp.com/";
+  
+  baseUrl: string = environment.urlEvent;
+
+  //baseUrl: string ="https://prod-chem-eventz-spring-events.herokuapp.com/";
   //baseUrl: string ="http://localhost:8887/";
   urlFindAll: string ="event-api/public/events"
   urlFindResearch: string ="event-api/public/event"
