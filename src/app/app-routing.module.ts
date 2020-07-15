@@ -9,6 +9,7 @@ import { AdminSpaceComponent } from './admin-space/admin-space.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { ContentComponent } from './content/content.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'personalSpace', component:PersonalSpaceComponent},
   {path:'adminSpace', component:AdminSpaceComponent},
   {path:'updateEvent/:id', component:UpdateEventComponent},
-  {path: 'about', component:ContentComponent}
+  {path: 'about', component:ContentComponent},
+  {path:'manageUser', component:ManageUserComponent}
 ];
 
 @NgModule({

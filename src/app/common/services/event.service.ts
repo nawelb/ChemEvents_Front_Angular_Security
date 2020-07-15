@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class EventService {
   
   baseUrl: string = environment.urlEvent;
-
+  //baseUrl: string ="http://localhost:8887/"
   //baseUrl: string ="https://prod-chem-eventz-spring-events.herokuapp.com/";
   //baseUrl: string ="http://localhost:8887/";
   urlFindAll: string ="event-api/public/events"

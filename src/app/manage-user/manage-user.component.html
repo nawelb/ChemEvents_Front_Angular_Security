@@ -1,0 +1,56 @@
+<p>manage-user works!</p>
+
+<div class="container outside col-sm-6">
+<!--     <div class="container tableau col-sm-6 float" id="adminTableUser"> 
+ -->       <!-- <div style="overflow-x:auto;" class="tableau table-striped" > -->
+        <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+    <!--           <th scope="col">id</th>
+     -->          <th scope="col">id</th>
+              <th scope="col">Username</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let user of listeUsers">
+                  <!-- <td id="tdId">
+                  <div class="tr">
+                    {{event._id}}
+                  </div>
+                  </td> -->
+    
+                  <td id="id">
+                    <div class="tr">
+                      {{user.id}}
+                    </div>
+                  </td>
+                  <td id="username">
+                    <div class="tr">
+                      {{user.username}}
+                    </div>
+                  </td>
+                  <td id="tdSiteWeb">
+                    <div class="tr">
+                      {{user.name}} 
+                    </div>
+                  </td>
+                  <td id="tdSiteWeb">
+                    <div class="tr">
+                      {{user.email}} 
+                    </div>
+                  </td>
+                  <td>
+                    <div class="trBtn">
+                      
+                      <button type="submit" class="btn btn-danger btnUpdateModif" (click)= "deleteUser(user.username)" > 
+                          Supprimer<i class="fa fa-trash" aria-hidden="true" ></i>
+                      </button> 
+                    </div>
+                  </td>
+              </tr>
+          </tbody>
+        </table>  
+<!--      </div> 
+ -->    </div> 

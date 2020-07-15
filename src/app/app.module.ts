@@ -26,6 +26,7 @@ import { UpdateEventComponent } from './update-event/update-event.component';
 
 // RECOMMENDED
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     ResearchComponent,
     PersonalSpaceComponent,
     AdminSpaceComponent,
-    UpdateEventComponent
+    UpdateEventComponent,
+    ManageUserComponent
     
   ],
   imports: [
