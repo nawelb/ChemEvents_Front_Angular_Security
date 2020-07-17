@@ -17,6 +17,7 @@ export class PersonalSpaceComponent {
   isLoggedIn = false;
   event:Event=new Event();
   message: any;
+  required:false;
 
   constructor(private tokenStorage: TokenStorageService, private eventService:EventService) { }
 
@@ -40,11 +41,21 @@ export class PersonalSpaceComponent {
         return true;
       });
     } 
+    
   }
   addNewEvent(){
     console.log(JSON.stringify(this.event));
     let resp=this.eventService.addNewEvent(this.event);
-    resp.subscribe((data)=> {this.event});
+    if(this.event.title1=="" || this.event.dateDebut=="" || this.event.siteWeb==""){
+      console.log("event vide")
+    }else{
+
+      resp.subscribe((data)=> {this.event});
+      console.log("event added")
+
+    }
+
+    
   }
 
   
