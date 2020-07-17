@@ -1,80 +1,118 @@
 <p>events works!</p>
 
-<div class="boxSearch">
-
-    <div class="nav-bar">
-        <div class="container search">
-            <h2>Rechercher un événement :</h2>
-            <hr>
-            <br/>
-                <div id= "rechercherEvent" class="row">
-                    <div id ="zoneSearch" class="col-sm-8">
-                        <input id="findByKeyWord" type="text" name="keyWord" [(ngModel)]="keyWord" placeholder="mot clé, ville, date (yyyy-mm-dd) . . ." size="40"/> 
-                    </div>
-                    <div id ="btnSearch" class="col-sm-3">
-                        <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning" value="Rechercher">
-                    </div>            
-                </div>                
-        </div>
-    </div>
+ <section id="event" class="section-event"> 
 
 
-    <div id="idContainer" class="container col-md-3 bg-dark">
-        <div class="panel panel-default bg-dark">
+
+<div class="container col-sm-12 boxSearch ">
+
+
+
+
+    <div id="idContainer" class="container">
+
+
+        <div class="search col-sm-12 row bg-dark">
             
-            <div class="panel-heading bg-dark">
-                <img src="https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg">
-            </div>
+                <div id="zoneSearch" class="col-md-9 col-sm-6">
+                    <input type="text" name="keyWord" [(ngModel)]="keyWord"
+                        placeholder="mot clé, ville, date (yyyy-mm-dd) . . ." />
+                </div>
+            
+
+            
+
+                <div class="col-md-3 col-sm-6">
+                    <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning"
+                        value="Rechercher">
+                </div>
+            
+
+            <!--   <h2>Rechercher un événement :</h2>
+                <hr>
+                <br />
+                <div id="rechercherEvent" class="row">
+                        <div id="zoneSearch" class="col-sm-8">
+                            <input id="findByKeyWord" type="text" name="keyWord" [(ngModel)]="keyWord"
+                                placeholder="mot clé, ville, date (yyyy-mm-dd) . . ." size="40" />
+                        </div>
+                        <div id="btnSearch" class="col-sm-4">
+                            <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning"
+                                value="Rechercher">
+                        </div>
+                    </div>  -->
+        </div>
+
+
+        <div class="panel panel-default">
+
+            <!-- <div class="panel-heading"> -->
+            <!--                 <img src="https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg">
+ -->
+
+
+
+
+            <!-- </div> -->
 
             <div class="panel-body">
                 <div class="row">
-                        <div *ngFor="let event of listeEvents" class="col-sm-4">         
-                            <div class="card card-container taille">
-                                <div class="card-body bg-dark">
-                                    <h2 id="idTitle1" class="card-title1">{{event.title1}}</h2>
-                                    <hr class="hrCard">
-                                    <h3 id="idTitle2" class="card-title2">{{event.title2}}</h3>
-                                    <div *ngIf="event.city==null else elseLieu">
-                                        <p id="lieu" class="lieu"> Webinar </p>
-                                    </div>
-                                    <ng-template #elseLieu>
-                                        <p id="lieu" class="lieu"> {{event.city}} ({{event.country}}) </p>
-                                    </ng-template>
-                                    &nbsp;
-                                    <div *ngIf="event.dateFin ==null else elseBlock">
-                                        <p id="dateEvent" class="DDate"> {{event.dateDebut}} </p>
-                                    </div>
-                                    <ng-template #elseBlock>
-                                        <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}} </p>
-                                    </ng-template>
-                                </div> 
-                                                              
-                                <div class="rowFooter d-flex align-items-end bg-dark">
-                                    <div *ngIf="event.register !=null else DisableRegister">
-                                        <a id ="register" href="{{event.register}}" target="_blank" type="button" class="btn btnCard" value="Inscription">Inscription</a>
-                                    </div>
-                                    <ng-template #DisableRegister>
-                                        <a id ="register" href="{{event.register}}" target="_blank" type="button" class="btn btnCard disabled" value="Inscription">Inscription</a>
-                                    </ng-template>
-                                    <div *ngIf="event.submitAbstract !=null || event.submitAbstract =='?' else Disable">
-                                        <a href="{{event.submitAbstract}}" target="_blank" type="button" class="btn btnCard" value="Abstract">Abstract</a>
-                                    </div>
-                                    <ng-template #Disable>
-                                        <a href="{{event.submitAbstract}}" target="_blank" type="button" class="btn btnCard disabled" value="Abstract">Abstract</a>
-                                    </ng-template>
-                                    <div *ngIf="event.siteWeb !=null else DisableSite">
-                                        <a href="{{event.siteWeb}}" target="_blank" type="button" class="btn btnCard" value="Site officiel">Site officiel</a>
-                                    </div>
-                                    <ng-template #DisableSite>
-                                        <a href="{{event.siteWeb}}" target="_blank" type="button" class="btn btnCard disabled" value="Site officiel">Site officiel</a>
-                                    </ng-template>
+                    <div *ngFor="let event of listeEvents" class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="card card-container taille">
+                            <div class="card-body bg-dark">
+                                <h2 id="idTitle1" class="card-title1">{{event.title1}}</h2>
+                                <hr class="hrCard">
+                                <h3 id="idTitle2" class="card-title2">{{event.title2}}</h3>
+                                <div *ngIf="event.city==null else elseLieu">
+                                    <p id="lieu" class="lieu"> Webinar </p>
                                 </div>
-                            </div>                                    
-                        </div>            
+                                <ng-template #elseLieu>
+                                    <p id="lieu" class="lieu"> {{event.city}} ({{event.country}}) </p>
+                                </ng-template>
+                                &nbsp;
+                                <div *ngIf="event.dateFin ==null else elseBlock">
+                                    <p id="dateEvent" class="DDate"> {{event.dateDebut}} </p>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <p id="dateEvent" class="DDate"> du {{event.dateDebut}} au {{event.dateFin}}
+                                    </p>
+                                </ng-template>
+                            </div>
+
+                            <div class="rowFooter d-flex align-items-end bg-dark">
+                                <div *ngIf="event.register !=null else DisableRegister">
+                                    <a id="register" href="{{event.register}}" target="_blank" type="button"
+                                        class="btn btnCard" value="Inscription">Inscription</a>
+                                </div>
+                                <ng-template #DisableRegister>
+                                    <a id="register" href="{{event.register}}" target="_blank" type="button"
+                                        class="btn btnCard disabled" value="Inscription">Inscription</a>
+                                </ng-template>
+                                <div *ngIf="event.submitAbstract !=null || event.submitAbstract =='?' else Disable">
+                                    <a href="{{event.submitAbstract}}" target="_blank" type="button" class="btn btnCard"
+                                        value="Abstract">Abstract</a>
+                                </div>
+                                <ng-template #Disable>
+                                    <a href="{{event.submitAbstract}}" target="_blank" type="button"
+                                        class="btn btnCard disabled" value="Abstract">Abstract</a>
+                                </ng-template>
+                                <div *ngIf="event.siteWeb !=null else DisableSite">
+                                    <a href="{{event.siteWeb}}" target="_blank" type="button" class="btn btnCard"
+                                        value="Site officiel">Site officiel</a>
+                                </div>
+                                <ng-template #DisableSite>
+                                    <a href="{{event.siteWeb}}" target="_blank" type="button"
+                                        class="btn btnCard disabled" value="Site officiel">Site officiel</a>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> 
-            
+            </div>
+
         </div>
-    </div>        
+
+    </div>
 
 </div>
+</section> 

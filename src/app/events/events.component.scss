@@ -1,66 +1,114 @@
-#navigationBar{
-    margin-left: 40px;
-    color:white;
-}
+/* .section-event{
+    background: url("https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg") ;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+} */
+
 
 .boxSearch {
-    display:flex;
-}
-
-.nav-bar{
-    margin-top: 55px;
-    width: 350px; 
-    position: fixed;
+    /* display:flex; */
+    //background-image:url("https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg") ;
+    background:url("https://chem-eventz-images.s3.us-east-2.amazonaws.com/periodic-system-3962844_1280v2.jpg") ;
+    background-repeat: no-repeat;
+    background-attachment:  fixed ;
+    background-size: cover;
+    position: sticky;
 }
 
 .search{
-    width: 340px;
-    margin-left: 8px;
-   // margin-top: 70px;
+    /*  width: 90%;  */
+     top: 68px;
     border:solid;
-    border-color: black;
-    border-width: 1px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left : 10px;
-}
+     border-color:rgba(255, 208, 0, 0.801); 
+     border-radius:20px;
+     border-width: 1px; 
+     position: sticky; 
+     z-index:2;
+     /* height: 60px; */
+     padding:10px;
+     color:white;
+     /* background-color: #420b01da; */
 
-#rechercherEvent{
-    margin-bottom:10px;
-}
-#zoneSearch{
-    margin-right: 10px;
-}
-
-#btnResearch{
-    width:75px;
-}
-
-
- #idContainer{
-    margin-top: 27px;
-    margin-left: 360px;
-    margin-bottom: 30px;
-} 
-
-.panel-default{
-    width: 1140px;
-    border-width: 0px;
-    margin-left: 50px;
-}
-
-.panel-heading{
-    border-width: 0px;
-     max-width: 1060px ;
  }
 
-img {
-    width: 1060px;
-    height: auto;
+#idContainer{
+    /*  margin-top: 27px; */
+    /*  margin-left: 360px; */
+     margin-bottom: 30px;
+    /*  position: relative; */
+ }
+
+ .panel-default{
+     
+    width: 100%; 
+     border-width: 0px;
+     /* margin-left: 8; */
+/*       margin-left: 50px;
+ */     background: none;
+ }
+ 
+ .panel-heading{
+     width: 100%;
+      margin-top: 25px;
+      border-width: 0px;
+      background:none;
+    
+      height: 120px;
   }
+h4{
+    font-size: 12px;
+}
+  
+
+ .nav-bar{
+    /* margin-top: 55px; */
+/*     width: 350px; 
+ */    position: fixed;
+        z-index:2; 
+} 
 
 .panel-body{
-    border-width: 0px;
+    margin-top: 80px;    
+    }
+
+/* #rechercherEvent{
+    margin-bottom:10px;
+} */
+/* #zoneSearch{
+    margin-right: 10px;
+} */
+
+/* #btnResearch{
+    width:100%;
+} */
+
+ .card {
+    float: left; 
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+/* img {
+    width: 1060px;
+    height: auto;
+  } */
+
+  input[type=text]{
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+}
+
+input[type=button]{
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
 }
 
 .taille{
@@ -71,6 +119,7 @@ img {
     border-color: rgb(177, 136, 3);
     border-width: 1px;
     color: white;
+    margin:10px
 }
  hr.hrCard{
     padding-top: 12px;

@@ -28,11 +28,11 @@ export class HeaderComponent implements OnInit {
           this.isLoggedIn = true;
           this.authority = 'admin';
           return false;
-        } else if (role === 'ROLE_PM') {
+        } /* else if (role === 'ROLE_PM') {
           this.isLoggedIn = true;
           this.authority = 'pm';
           return false;
-        }
+        } */
         this.isLoggedIn = true;
         this.authority = 'user';
         return true;
