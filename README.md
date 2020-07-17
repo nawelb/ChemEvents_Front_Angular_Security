@@ -67,12 +67,18 @@ ChemEventz requires Angular 9
 $ git clone https://github.com/nawelb/ChemEvents_Front_Angular_Security.git
 $ cd ChemEvents_Front_Angular_Security
 ```
-Import the project in your favorite IDE :
+Import the project in your favorite IDE.
 
-Add environnement variables :
- - `baseUrl` (in `login.service.ts`) : as url of your Spring login microservice [cf Spring Security]
- - `baseUrl` (in `Authentication.service.ts`) : as url of your Spring login microservice [cf Spring Security]
- - `baseUrl` (in `event.service.ts`) : as url of your Spring event microservice [cf Spring Events]
+Add environnement variables in those 2 environmnent files : 
+
+- environments > environment.ts :
+    - `urlEvent` : as as url of your Spring event microservice running locally [cf Spring Events] (ex : "http://localhost:8887/")
+    - `urlSecurity` : as url of your Spring login microservice  running locally [cf Spring Security] (ex : "http://localhost:8888/")
+
+
+- environments > environment.prod.ts :
+    - `urlEvent` : as as url of your Spring event microservice in production [cf Spring Events] 
+    - `urlSecurity` : as url of your Spring login microservice in production [cf Spring Security]
 
 
 ## Build
@@ -88,7 +94,7 @@ In the root directory, for a dev server, run:
 ```sh
 $ ng serve -o
 ```
-Finaly,  Navigate to `http://localhost:4200/`, The app will automatically reload if you change any of the source files.
+Finaly, Navigate to `http://localhost:4200/`, The app will automatically reload if you change any of the source files.
 
 
 
