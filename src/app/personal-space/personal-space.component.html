@@ -21,11 +21,13 @@
                               [(ngModel)]="event.title2" #title2="ngModel" /> 
                           <input type="text" 
                               class="form-control col-sm-5"
-                              placeholder="Date de début (*) : jj/mm/yyyy" name="dateDebut" 
+                              pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"
+                              placeholder="Date de début (*) : aaaa-mm-jj" name="dateDebut" 
                               [(ngModel)]="event.dateDebut" #dateDebut="ngModel" required />
                           <input type="text" id="endDate"
                               class="form-control col-sm-5 pull-right" 
-                              placeholder="Date de fin : jj/mm/yyyy" name="dateFin" 
+                              pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"
+                              placeholder="Date de fin : aaaa-mm-jj" name="dateFin" 
                               [(ngModel)]="event.dateFin" #dateFin="ngModel"/>
                           <input type="text" 
                                 pattern="[A-Za-z]{1,50}"
