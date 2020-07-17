@@ -23,6 +23,9 @@ export class AdminSpaceComponent implements OnInit {
   public username: string;
   public authority: string;
   isLoggedIn = false;
+  keyWord:string;
+  city:string;
+  country:string;
 
   tableHeaders = ["title1", "title2", "img1", "img2", 
     "description", "date", "dateDebut", "dateFin", "lieu",
@@ -30,7 +33,7 @@ export class AdminSpaceComponent implements OnInit {
     "submitAbstract", "register"];
   selectedEventEmployeId: number;
 
-  constructor(private tokenStorage: TokenStorageService, private eventService:EventService, private _route: ActivatedRoute, private _router:Router) { }
+  constructor(private _eventService : EventService,private tokenStorage: TokenStorageService, private eventService:EventService, private _route: ActivatedRoute, private _router:Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -90,5 +93,31 @@ deleteEvent(id:string){
 
 }
 
+
+
+getByCity(city:string){
+  this._eventService.findByCity(this.city).subscribe(
+    data => {
+      this.listeEvents = data; 
+    console.log(data)},
+      (error) => { console.log(error)}
+  )
+}
+getByCountry(country:string){
+  this._eventService.findByCountry(this.country).subscribe(
+    data => {
+      this.listeEvents = data; 
+    console.log(data)},
+      (error) => { console.log(error)}
+  )
+}
+getByKeyWord(keyWord:string){
+  this._eventService.findByKeyWord(this.keyWord).subscribe(
+    data => {
+      this.listeEvents = data; 
+    console.log(data)},
+      (error) => { console.log(error)}
+  )
+}
 
 }

@@ -1,58 +1,79 @@
-
-
 <div class="container outside col-sm-12">
-<div class="container tableau col-sm-12 float" id="adminTableEvents"> 
-   <!-- <div style="overflow-x:auto;" class="tableau table-striped" > -->
+
+
+
+    <div class="search row bg-dark">
+        
+            <div id="zoneSearch" class="col-md-9 col-sm-6">
+                <input class="searchAdmin" type="text" name="keyWord" [(ngModel)]="keyWord"
+                    placeholder="Rechercher un évènement par:    mot clé,    ville,    date (AAAA-MM-JJ) . . ." />
+            </div>
+        
+
+        
+
+            <div class="col-md-3 col-sm-6">
+                <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning"
+                    value="Rechercher">
+            </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+  <div class="container tableau col-sm-12 float" id="adminTableEvents">
+    <!-- <div style="overflow-x:auto;" class="tableau table-striped" > -->
     <table class="table table-striped table-hover">
       <thead class="thead-dark">
         <tr>
-<!--           <th scope="col">id</th>
- -->          <th scope="col">title majeur</th>
+          <!--           <th scope="col">id</th>
+ -->
+          <th scope="col">title majeur</th>
           <th scope="col">titre mineur</th>
           <th scope="col">site officiel</th>
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor = "let event of listeEvents">
-              <!-- <td id="tdId">
+        <tr *ngFor="let event of listeEvents">
+          <!-- <td id="tdId">
               <div class="tr">
                 {{event._id}}
               </div>
               </td> -->
 
-              <td id="tdTitle1">
-                <div class="tr">
-                  {{event.title1}}
-                </div>
-              </td>
-              <td id="tdTitle2">
-                <div class="tr">
-                  {{event.title2}}
-                </div>
-              </td>
-              <td id="tdSiteWeb">
-                <div class="tr">
-                  {{event.siteWeb}} 
-                </div>
-              </td>
-              <td>
-                <div class="trBtn">
-                  <button type="button" class="btn btn-success btnUpdateModif" (click)= "editEvent(event)" > 
-                      Modifier <i class="fa fa-edit" aria-hidden="true" ></i>
-                  </button> 
-                  
-                  <button type="submit" class="btn btn-danger btnUpdateModif" (click)= "deleteEvent(event._id)"> 
-                      Supprimer<i class="fa fa-trash" aria-hidden="true" ></i>
-                  </button> 
-                </div>
-              </td>
-          </tr>
+          <td id="tdTitle1">
+            <div class="tr">
+              {{event.title1}}
+            </div>
+          </td>
+          <td id="tdTitle2">
+            <div class="tr">
+              {{event.title2}}
+            </div>
+          </td>
+          <td id="tdSiteWeb">
+            <div class="tr">
+              {{event.siteWeb}}
+            </div>
+          </td>
+          <td>
+            <div class="trBtn">
+              <button type="button" class="btn btn-success btnUpdateModif" (click)="editEvent(event)">
+                Modifier <i class="fa fa-edit" aria-hidden="true"></i>
+              </button>
+
+              <button type="submit" class="btn btn-danger btnUpdateModif" (click)="deleteEvent(event._id)">
+                Supprimer<i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
       </tbody>
-    </table>  
- </div> 
-</div> 
-
-
-
-
-
+    </table>
+  </div>
+</div>

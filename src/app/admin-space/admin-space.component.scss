@@ -7,15 +7,44 @@
     position: fixed ;
     overflow: auto;
 }
+.search{
+    /*  width: 90%;  */
+     top: 68px;
+    border:solid;
+     border-color:rgba(255, 208, 0, 0.801); 
+     border-radius:20px;
+     border-width: 1px; 
+     position: sticky; 
+     z-index:2;
+     /* height: 60px; */
+     padding:10px;
+     color:white;
+     /* background-color: #420b01da; */
 
+ }
 .tableau{
     /* width:1100px; */
-    margin-top:70px;
+    margin-top:80px;
     font-family: sans-serif;
     font-size: 12px;
     float: left;
     text-align: center;
 
+}
+
+.searchAdmin{
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 30px;
+    font-size:13px;
+    color:black;
+}
+
+input[type=button]{
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
 }
 
 .table{
