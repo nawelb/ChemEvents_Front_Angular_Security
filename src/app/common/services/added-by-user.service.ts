@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AddedByUser } from '../data/addedbyuser';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddedByUserService {
-  baseUrl: string = "http://localhost:8886"
+  baseUrl: string = environment.urlGestion;
+  //baseUrl: string = "http://localhost:8886"
 
   urlAdd: string = "/addedByUser/ajouterEvent"
   urlFindAll: string = "/addedByUser/findAllSaved"

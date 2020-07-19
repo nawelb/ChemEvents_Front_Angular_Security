@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   urlEvent:"http://localhost:8887/",
-  urlSecurity:"http://localhost:8888"
+  urlSecurity:"http://localhost:8888", 
+  urlGestion:"http://localhost:8886"
 };
 
 /*

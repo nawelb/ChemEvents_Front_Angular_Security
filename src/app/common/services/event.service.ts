@@ -53,8 +53,5 @@ export class EventService {
   findById(_id:string) : Observable<Event>{
     return this._http.get<Event>(this.baseUrl+this.urlFindResearch+"/"+_id); 
   }
-
-
-  
 }
 

@@ -4,9 +4,9 @@
 
     <div class="search row bg-dark">
         
-            <div id="zoneSearch" class="col-md-6 col-sm-6">
+            <div id="zoneSearch" class="col-md-9 col-sm-6">
                 <input class="searchAdmin" type="text" name="keyWord" [(ngModel)]="keyWord"
-                    placeholder="Rechercher un évènement par:    mot clé,    ville,    date (AAAA-MM-JJ) . . ." />
+                    placeholder="Rechercher un évènement ou un utilisateur" />
             </div>
         
 
@@ -14,12 +14,9 @@
 
             <div class="col-md-3 col-sm-3">
                 <input type="button" id="btnResearch" (click)=researchUser(keyWord) results class="btn-warning"
-                    value="utilisateur">
-            </div>
-            <div class="col-md-3 col-sm-3">
-              <input type="button" id="btnResearch2" (click)=researchEvent(keyWord) results class="btn-warning"
-                  value="evenement">
-          </div>
+                    value="Rechercher">
+            </div> 
+            
         
     </div>
 
