@@ -17,9 +17,7 @@ export class EventsComponent implements OnInit {
   listeEvents : Event[];
   date:string;
   today= new Date();
-  //research: ResearchComponent;
   constructor(private _eventService : EventService,/*  public researchLinkService:ResearchLinkService */) { 
-    //this.researchLinkService.listeEvents;
   }
 
   ngOnInit(): void{
@@ -33,18 +31,9 @@ export class EventsComponent implements OnInit {
     this._eventService.findAll().subscribe(
       data => {
         this.listeEvents=data,
-        //this.date = (this.today.getFullYear()+'-'+(this.today.getMonth()+1)+'-'+this.today.getDate());
-        //this.formatDate(this.today)
-       /*  this.date = JSON.stringify(this.formatDate(this.today))
-        console.log("++++++++++"+this.date) */
          this.listeEvents.sort(function (a:Event, b:Event) {
-        //   console.log("V222222"+this.date)
           return a.dateDebut.localeCompare(b.dateDebut);
-         // a.dateDebut.localeCompare(b.dateDebut); 
-          //return this.listeEvents.
-      //  }).filter(event => event.dateDebut > this.date);; 
       })
-
       }, (error) => {console.log(error)}
       ); 
   } 
@@ -63,19 +52,8 @@ export class EventsComponent implements OnInit {
 
     return [year, month, day].join('-');
 }
-/* 
-afterToday(event : Event){
-  //liste.forEach(element => {
 
-    event.dateDebut > this.date;
-    
-  //});
-}
- */
-
-
-
-  getByCity(city:string){
+getByCity(city:string){
     this._eventService.findByCity(this.city).subscribe(
       data => {
         this.listeEvents = data; 
@@ -83,6 +61,7 @@ afterToday(event : Event){
         (error) => { console.log(error)}
     )
   }
+
   getByCountry(country:string){
     this._eventService.findByCountry(this.country).subscribe(
       data => {
@@ -91,6 +70,7 @@ afterToday(event : Event){
         (error) => { console.log(error)}
     )
   }
+
   getByKeyWord(keyWord:string){
     this._eventService.findByKeyWord(this.keyWord).subscribe(
       data => {
@@ -99,9 +79,5 @@ afterToday(event : Event){
         (error) => { console.log(error)}
     )
   }
-
-  treatBydate(liste:Event[]){
-
-  }
-  
+ 
 }

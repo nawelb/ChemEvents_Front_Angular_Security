@@ -4,7 +4,7 @@
 
     <div class="search row bg-dark">
         
-            <div id="zoneSearch" class="col-md-9 col-sm-6">
+            <div id="zoneSearch" class="col-md-6 col-sm-6">
                 <input class="searchAdmin" type="text" name="keyWord" [(ngModel)]="keyWord"
                     placeholder="Rechercher un évènement par:    mot clé,    ville,    date (AAAA-MM-JJ) . . ." />
             </div>
@@ -12,10 +12,14 @@
 
         
 
-            <div class="col-md-3 col-sm-6">
-                <input type="button" id="btnResearch" (click)=getByKeyWord(keyWord) results class="btn-warning"
-                    value="Rechercher">
+            <div class="col-md-3 col-sm-3">
+                <input type="button" id="btnResearch" (click)=researchUser(keyWord) results class="btn-warning"
+                    value="utilisateur">
             </div>
+            <div class="col-md-3 col-sm-3">
+              <input type="button" id="btnResearch2" (click)=researchEvent(keyWord) results class="btn-warning"
+                  value="evenement">
+          </div>
         
     </div>
 
@@ -36,10 +40,11 @@
           <th scope="col">title majeur</th>
           <th scope="col">titre mineur</th>
           <th scope="col">site officiel</th>
+          <th scope="col">Utilisateur</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let event of listeEvents">
+        <tr *ngFor="let event of listeEventWithUser">
           <!-- <td id="tdId">
               <div class="tr">
                 {{event._id}}
@@ -59,6 +64,11 @@
           <td id="tdSiteWeb">
             <div class="tr">
               {{event.siteWeb}}
+            </div>
+          </td>
+          <td id="tdSiteUser">
+            <div class="tr">
+              {{event.username}}
             </div>
           </td>
           <td>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TokenStorageService } from '../common/services/token-storage.service';
 import { Event } from '../common/data/event';
 import { EventService } from '../common/services/event.service';
+import { AddedByUserService } from '../common/services/added-by-user.service';
+import { AddedByUser } from '../common/data/addedbyuser';
 
 
 @Component({
@@ -18,8 +20,9 @@ export class PersonalSpaceComponent {
   event:Event=new Event();
   message: any;
   required:false;
+  addedbyuser:AddedByUser= new AddedByUser();
 
-  constructor(private tokenStorage: TokenStorageService, private eventService:EventService) { }
+  constructor(private tokenStorage: TokenStorageService, private eventService:EventService, private addedByUserService:AddedByUserService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -46,11 +49,18 @@ export class PersonalSpaceComponent {
   addNewEvent(){
     console.log(JSON.stringify(this.event));
     let resp=this.eventService.addNewEvent(this.event);
+
+    this.addedbyuser.username=this.username;
+    this.addedbyuser.event=this.event.title1;
+    let added=this.addedByUserService.addAddedByUser(this.addedbyuser);
+
     if(this.event.title1=="" || this.event.dateDebut=="" || this.event.siteWeb==""){
       console.log("event vide")
     }else{
 
       resp.subscribe((data)=> {this.event});
+      added.subscribe((data)=> {this.addedbyuser;
+      console.log(JSON.stringify(this.addedbyuser)) })
       console.log("event added")
 
     }
