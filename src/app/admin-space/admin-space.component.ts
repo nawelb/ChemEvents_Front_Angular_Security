@@ -135,9 +135,9 @@ export class AdminSpaceComponent implements OnInit {
       })
     }
  
-  openDivUpdate(): void {
+ /*  openDivUpdate(): void {
       this.state = (this.state === "small" ? 'large' : 'small');
-    }
+    } */
 
   editEvent(event) {
       this.eventId = event._id;
